@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlExternalServices
+ *
+ * @ORM\Table(name="mdl_external_services", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_exteserv_nam_uix", columns={"name"})})
+ * @ORM\Entity
+ */
+class MdlExternalServices
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=200, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enabled", type="boolean", nullable=false)
+     */
+    private $enabled;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="requiredcapability", type="string", length=150, nullable=true)
+     */
+    private $requiredcapability;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="restrictedusers", type="boolean", nullable=false)
+     */
+    private $restrictedusers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=true)
+     */
+    private $component;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=true)
+     */
+    private $timemodified;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortname", type="string", length=255, nullable=true)
+     */
+    private $shortname;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="downloadfiles", type="boolean", nullable=false)
+     */
+    private $downloadfiles = '0';
+
+
+}

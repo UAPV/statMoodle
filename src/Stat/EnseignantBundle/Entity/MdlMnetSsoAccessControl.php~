@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetSsoAccessControl
+ *
+ * @ORM\Table(name="mdl_mnet_sso_access_control", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_mnetssoaccecont_mneuse_uix", columns={"mnet_host_id", "username"})})
+ * @ORM\Entity
+ */
+class MdlMnetSsoAccessControl
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=100, nullable=false)
+     */
+    private $username = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mnet_host_id", type="bigint", nullable=false)
+     */
+    private $mnetHostId = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="accessctrl", type="string", length=20, nullable=false)
+     */
+    private $accessctrl = 'allow';
+
+
+}

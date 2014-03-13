@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielPedagogie
+ *
+ * @ORM\Table(name="mdl_referentiel_pedagogie")
+ * @ORM\Entity
+ */
+class MdlReferentielPedagogie
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="promotion", type="string", length=4, nullable=true)
+     */
+    private $promotion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_groupe", type="string", length=20, nullable=true)
+     */
+    private $numGroupe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_cloture", type="string", length=120, nullable=true)
+     */
+    private $dateCloture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="formation", type="string", length=40, nullable=true)
+     */
+    private $formation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pedagogie", type="string", length=40, nullable=true)
+     */
+    private $pedagogie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="composante", type="string", length=40, nullable=true)
+     */
+    private $composante;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=255, nullable=true)
+     */
+    private $commentaire = '';
+
+
+}

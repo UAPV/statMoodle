@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielEtablissement
+ *
+ * @ORM\Table(name="mdl_referentiel_etablissement")
+ * @ORM\Entity
+ */
+class MdlReferentielEtablissement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_etablissement", type="string", length=20, nullable=true)
+     */
+    private $numEtablissement = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_etablissement", type="string", length=80, nullable=true)
+     */
+    private $nomEtablissement = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_etablissement", type="string", length=255, nullable=true)
+     */
+    private $adresseEtablissement = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo_etablissement", type="text", nullable=true)
+     */
+    private $logoEtablissement;
+
+
+}

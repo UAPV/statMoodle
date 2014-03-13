@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScormSeqRuleconds
+ *
+ * @ORM\Table(name="mdl_scorm_seq_ruleconds", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_scorseqrule_scoid_uix", columns={"scoid", "id"})}, indexes={@ORM\Index(name="mdl_scorseqrule_sco_ix", columns={"scoid"})})
+ * @ORM\Entity
+ */
+class MdlScormSeqRuleconds
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scoid", type="bigint", nullable=false)
+     */
+    private $scoid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conditioncombination", type="string", length=3, nullable=false)
+     */
+    private $conditioncombination = 'all';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ruletype", type="boolean", nullable=false)
+     */
+    private $ruletype = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=25, nullable=false)
+     */
+    private $action = '';
+
+
+}

@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlTagInstance
+ *
+ * @ORM\Table(name="mdl_tag_instance", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_taginst_iteitetagtiu_uix", columns={"itemtype", "itemid", "tagid", "tiuserid"})}, indexes={@ORM\Index(name="mdl_taginst_tag_ix", columns={"tagid"})})
+ * @ORM\Entity
+ */
+class MdlTagInstance
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tagid", type="bigint", nullable=false)
+     */
+    private $tagid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="itemtype", type="string", length=255, nullable=false)
+     */
+    private $itemtype = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tiuserid", type="bigint", nullable=false)
+     */
+    private $tiuserid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ordering", type="bigint", nullable=true)
+     */
+    private $ordering;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCapabilities
+ *
+ * @ORM\Table(name="mdl_capabilities", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_capa_nam_uix", columns={"name"})})
+ * @ORM\Entity
+ */
+class MdlCapabilities
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="captype", type="string", length=50, nullable=false)
+     */
+    private $captype = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextlevel", type="bigint", nullable=false)
+     */
+    private $contextlevel = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="riskbitmask", type="bigint", nullable=false)
+     */
+    private $riskbitmask = '0';
+
+
+}

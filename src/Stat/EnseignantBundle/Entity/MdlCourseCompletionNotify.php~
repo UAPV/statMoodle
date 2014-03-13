@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseCompletionNotify
+ *
+ * @ORM\Table(name="mdl_course_completion_notify", indexes={@ORM\Index(name="mdl_courcompnoti_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlCourseCompletionNotify
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="role", type="bigint", nullable=false)
+     */
+    private $role = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="text", nullable=false)
+     */
+    private $message;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timesent", type="bigint", nullable=false)
+     */
+    private $timesent = '0';
+
+
+}

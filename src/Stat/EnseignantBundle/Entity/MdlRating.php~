@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlRating
+ *
+ * @ORM\Table(name="mdl_rating", indexes={@ORM\Index(name="mdl_rati_comratconite_ix", columns={"component", "ratingarea", "contextid", "itemid"}), @ORM\Index(name="mdl_rati_con_ix", columns={"contextid"}), @ORM\Index(name="mdl_rati_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlRating
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ratingarea", type="string", length=50, nullable=false)
+     */
+    private $ratingarea = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scaleid", type="bigint", nullable=false)
+     */
+    private $scaleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rating", type="bigint", nullable=false)
+     */
+    private $rating;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

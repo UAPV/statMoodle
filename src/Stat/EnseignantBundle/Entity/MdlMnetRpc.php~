@@ -1,0 +1,95 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetRpc
+ *
+ * @ORM\Table(name="mdl_mnet_rpc", indexes={@ORM\Index(name="mdl_mnetrpc_enaxml_ix", columns={"enabled", "xmlrpcpath"})})
+ * @ORM\Entity
+ */
+class MdlMnetRpc
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="functionname", type="string", length=40, nullable=false)
+     */
+    private $functionname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="xmlrpcpath", type="string", length=80, nullable=false)
+     */
+    private $xmlrpcpath = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plugintype", type="string", length=20, nullable=false)
+     */
+    private $plugintype = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pluginname", type="string", length=20, nullable=false)
+     */
+    private $pluginname = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enabled", type="boolean", nullable=false)
+     */
+    private $enabled = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="help", type="text", nullable=false)
+     */
+    private $help;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profile", type="text", nullable=false)
+     */
+    private $profile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filename", type="string", length=100, nullable=false)
+     */
+    private $filename = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="classname", type="string", length=150, nullable=true)
+     */
+    private $classname;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="static", type="boolean", nullable=true)
+     */
+    private $static;
+
+
+}

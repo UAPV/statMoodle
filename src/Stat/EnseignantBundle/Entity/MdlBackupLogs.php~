@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBackupLogs
+ *
+ * @ORM\Table(name="mdl_backup_logs", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_backlogs_bacid_uix", columns={"backupid", "id"})}, indexes={@ORM\Index(name="mdl_backlogs_bac_ix", columns={"backupid"})})
+ * @ORM\Entity
+ */
+class MdlBackupLogs
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="backupid", type="string", length=32, nullable=false)
+     */
+    private $backupid = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="loglevel", type="smallint", nullable=false)
+     */
+    private $loglevel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="string", length=255, nullable=false)
+     */
+    private $message = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+
+}

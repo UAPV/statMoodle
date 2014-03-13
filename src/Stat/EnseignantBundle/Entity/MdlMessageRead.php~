@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMessageRead
+ *
+ * @ORM\Table(name="mdl_message_read", indexes={@ORM\Index(name="mdl_messread_use_ix", columns={"useridfrom"}), @ORM\Index(name="mdl_messread_use2_ix", columns={"useridto"})})
+ * @ORM\Entity
+ */
+class MdlMessageRead
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="useridfrom", type="bigint", nullable=false)
+     */
+    private $useridfrom = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="useridto", type="bigint", nullable=false)
+     */
+    private $useridto = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subject", type="text", nullable=true)
+     */
+    private $subject;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullmessage", type="text", nullable=true)
+     */
+    private $fullmessage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fullmessageformat", type="smallint", nullable=true)
+     */
+    private $fullmessageformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullmessagehtml", type="text", nullable=true)
+     */
+    private $fullmessagehtml;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="smallmessage", type="text", nullable=true)
+     */
+    private $smallmessage;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="notification", type="boolean", nullable=true)
+     */
+    private $notification = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contexturl", type="text", nullable=true)
+     */
+    private $contexturl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contexturlname", type="text", nullable=true)
+     */
+    private $contexturlname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeread", type="bigint", nullable=false)
+     */
+    private $timeread = '0';
+
+
+}

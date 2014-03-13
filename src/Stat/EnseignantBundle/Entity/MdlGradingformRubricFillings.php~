@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradingformRubricFillings
+ *
+ * @ORM\Table(name="mdl_gradingform_rubric_fillings", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_gradrubrfill_inscri_uix", columns={"instanceid", "criterionid"})}, indexes={@ORM\Index(name="mdl_gradrubrfill_lev_ix", columns={"levelid"}), @ORM\Index(name="mdl_gradrubrfill_ins_ix", columns={"instanceid"}), @ORM\Index(name="mdl_gradrubrfill_cri_ix", columns={"criterionid"})})
+ * @ORM\Entity
+ */
+class MdlGradingformRubricFillings
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instanceid", type="bigint", nullable=false)
+     */
+    private $instanceid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="criterionid", type="bigint", nullable=false)
+     */
+    private $criterionid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="levelid", type="bigint", nullable=true)
+     */
+    private $levelid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="remark", type="text", nullable=true)
+     */
+    private $remark;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="remarkformat", type="boolean", nullable=true)
+     */
+    private $remarkformat;
+
+
+}

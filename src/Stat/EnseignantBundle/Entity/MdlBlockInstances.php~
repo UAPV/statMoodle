@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBlockInstances
+ *
+ * @ORM\Table(name="mdl_block_instances", indexes={@ORM\Index(name="mdl_blocinst_parshopagsub_ix", columns={"parentcontextid", "showinsubcontexts", "pagetypepattern", "subpagepattern"}), @ORM\Index(name="mdl_blocinst_par_ix", columns={"parentcontextid"})})
+ * @ORM\Entity
+ */
+class MdlBlockInstances
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="blockname", type="string", length=40, nullable=false)
+     */
+    private $blockname = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="parentcontextid", type="bigint", nullable=false)
+     */
+    private $parentcontextid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="showinsubcontexts", type="smallint", nullable=false)
+     */
+    private $showinsubcontexts;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pagetypepattern", type="string", length=64, nullable=false)
+     */
+    private $pagetypepattern = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subpagepattern", type="string", length=16, nullable=true)
+     */
+    private $subpagepattern;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="defaultregion", type="string", length=16, nullable=false)
+     */
+    private $defaultregion = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="defaultweight", type="bigint", nullable=false)
+     */
+    private $defaultweight;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="configdata", type="text", nullable=true)
+     */
+    private $configdata;
+
+
+}

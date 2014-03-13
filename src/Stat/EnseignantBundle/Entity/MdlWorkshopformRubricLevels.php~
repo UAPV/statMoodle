@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopformRubricLevels
+ *
+ * @ORM\Table(name="mdl_workshopform_rubric_levels", indexes={@ORM\Index(name="mdl_workrubrleve_dim_ix", columns={"dimensionid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopformRubricLevels
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dimensionid", type="bigint", nullable=false)
+     */
+    private $dimensionid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $grade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="definition", type="text", nullable=true)
+     */
+    private $definition;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="definitionformat", type="smallint", nullable=true)
+     */
+    private $definitionformat = '0';
+
+
+}

@@ -1,0 +1,102 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlPlagiarismCompilatioFiles
+ *
+ * @ORM\Table(name="mdl_plagiarism_compilatio_files", indexes={@ORM\Index(name="mdl_plagcompfile_cm_ix", columns={"cm"}), @ORM\Index(name="mdl_plagcompfile_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlPlagiarismCompilatioFiles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cm", type="bigint", nullable=false)
+     */
+    private $cm = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="identifier", type="string", length=255, nullable=false)
+     */
+    private $identifier = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filename", type="string", length=255, nullable=false)
+     */
+    private $filename = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="externalid", type="string", length=255, nullable=true)
+     */
+    private $externalid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reporturl", type="string", length=255, nullable=true)
+     */
+    private $reporturl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="statuscode", type="string", length=10, nullable=true)
+     */
+    private $statuscode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="similarityscore", type="integer", nullable=false)
+     */
+    private $similarityscore = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attempt", type="integer", nullable=false)
+     */
+    private $attempt = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="errorresponse", type="text", nullable=true)
+     */
+    private $errorresponse;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timesubmitted", type="bigint", nullable=false)
+     */
+    private $timesubmitted = '0';
+
+
+}

@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlExternalFunctions
+ *
+ * @ORM\Table(name="mdl_external_functions", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_extefunc_nam_uix", columns={"name"})})
+ * @ORM\Entity
+ */
+class MdlExternalFunctions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=200, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="classname", type="string", length=100, nullable=false)
+     */
+    private $classname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="methodname", type="string", length=100, nullable=false)
+     */
+    private $methodname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="classpath", type="string", length=255, nullable=true)
+     */
+    private $classpath;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="capabilities", type="string", length=255, nullable=true)
+     */
+    private $capabilities;
+
+
+}

@@ -1,0 +1,375 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlUser
+ *
+ * @ORM\Table(name="mdl_user", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_user_mneuse_uix", columns={"mnethostid", "username"})}, indexes={@ORM\Index(name="mdl_user_del_ix", columns={"deleted"}), @ORM\Index(name="mdl_user_con_ix", columns={"confirmed"}), @ORM\Index(name="mdl_user_fir_ix", columns={"firstname"}), @ORM\Index(name="mdl_user_las_ix", columns={"lastname"}), @ORM\Index(name="mdl_user_cit_ix", columns={"city"}), @ORM\Index(name="mdl_user_cou_ix", columns={"country"}), @ORM\Index(name="mdl_user_las2_ix", columns={"lastaccess"}), @ORM\Index(name="mdl_user_ema_ix", columns={"email"}), @ORM\Index(name="mdl_user_aut_ix", columns={"auth"}), @ORM\Index(name="mdl_user_idn_ix", columns={"idnumber"})})
+ * @ORM\Entity
+ */
+class MdlUser
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auth", type="string", length=20, nullable=false)
+     */
+    private $auth = 'manual';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="confirmed", type="boolean", nullable=false)
+     */
+    private $confirmed = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="policyagreed", type="boolean", nullable=false)
+     */
+    private $policyagreed = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=false)
+     */
+    private $deleted = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="suspended", type="boolean", nullable=false)
+     */
+    private $suspended = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mnethostid", type="bigint", nullable=false)
+     */
+    private $mnethostid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=100, nullable=false)
+     */
+    private $username = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=32, nullable=false)
+     */
+    private $password = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idnumber", type="string", length=255, nullable=false)
+     */
+    private $idnumber = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="firstname", type="string", length=100, nullable=false)
+     */
+    private $firstname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastname", type="string", length=100, nullable=false)
+     */
+    private $lastname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     */
+    private $email = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="emailstop", type="boolean", nullable=false)
+     */
+    private $emailstop = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="icq", type="string", length=15, nullable=false)
+     */
+    private $icq = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="skype", type="string", length=50, nullable=false)
+     */
+    private $skype = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="yahoo", type="string", length=50, nullable=false)
+     */
+    private $yahoo = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aim", type="string", length=50, nullable=false)
+     */
+    private $aim = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="msn", type="string", length=50, nullable=false)
+     */
+    private $msn = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone1", type="string", length=20, nullable=false)
+     */
+    private $phone1 = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone2", type="string", length=20, nullable=false)
+     */
+    private $phone2 = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="institution", type="string", length=40, nullable=false)
+     */
+    private $institution = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="department", type="string", length=30, nullable=false)
+     */
+    private $department = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=70, nullable=false)
+     */
+    private $address = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=120, nullable=false)
+     */
+    private $city = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=2, nullable=false)
+     */
+    private $country = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lang", type="string", length=30, nullable=false)
+     */
+    private $lang = 'en';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="theme", type="string", length=50, nullable=false)
+     */
+    private $theme = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="timezone", type="string", length=100, nullable=false)
+     */
+    private $timezone = '99';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="firstaccess", type="bigint", nullable=false)
+     */
+    private $firstaccess = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lastaccess", type="bigint", nullable=false)
+     */
+    private $lastaccess = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lastlogin", type="bigint", nullable=false)
+     */
+    private $lastlogin = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="currentlogin", type="bigint", nullable=false)
+     */
+    private $currentlogin = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastip", type="string", length=45, nullable=false)
+     */
+    private $lastip = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secret", type="string", length=15, nullable=false)
+     */
+    private $secret = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="picture", type="boolean", nullable=false)
+     */
+    private $picture = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=false)
+     */
+    private $url = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="descriptionformat", type="boolean", nullable=false)
+     */
+    private $descriptionformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mailformat", type="boolean", nullable=false)
+     */
+    private $mailformat = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="maildigest", type="boolean", nullable=false)
+     */
+    private $maildigest = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="maildisplay", type="boolean", nullable=false)
+     */
+    private $maildisplay = '2';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="htmleditor", type="boolean", nullable=false)
+     */
+    private $htmleditor = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ajax", type="boolean", nullable=false)
+     */
+    private $ajax = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="autosubscribe", type="boolean", nullable=false)
+     */
+    private $autosubscribe = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="trackforums", type="boolean", nullable=false)
+     */
+    private $trackforums = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="trustbitmask", type="bigint", nullable=false)
+     */
+    private $trustbitmask = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagealt", type="string", length=255, nullable=true)
+     */
+    private $imagealt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="screenreader", type="boolean", nullable=false)
+     */
+    private $screenreader = '0';
+
+
+}

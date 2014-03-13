@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlComments
+ *
+ * @ORM\Table(name="mdl_comments")
+ * @ORM\Entity
+ */
+class MdlComments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentarea", type="string", length=255, nullable=false)
+     */
+    private $commentarea = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="format", type="boolean", nullable=false)
+     */
+    private $format = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+
+}

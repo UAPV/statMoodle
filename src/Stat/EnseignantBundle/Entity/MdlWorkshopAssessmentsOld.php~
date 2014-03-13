@@ -1,0 +1,137 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopAssessmentsOld
+ *
+ * @ORM\Table(name="mdl_workshop_assessments_old", indexes={@ORM\Index(name="mdl_workasseold_use_ix", columns={"userid"}), @ORM\Index(name="mdl_workasseold_mai_ix", columns={"mailed"}), @ORM\Index(name="mdl_workasseold_wor_ix", columns={"workshopid"}), @ORM\Index(name="mdl_workasseold_sub_ix", columns={"submissionid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopAssessmentsOld
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="submissionid", type="bigint", nullable=false)
+     */
+    private $submissionid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timegraded", type="bigint", nullable=false)
+     */
+    private $timegraded = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeagreed", type="bigint", nullable=false)
+     */
+    private $timeagreed = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="grade", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $grade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gradinggrade", type="smallint", nullable=false)
+     */
+    private $gradinggrade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="teachergraded", type="smallint", nullable=false)
+     */
+    private $teachergraded = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mailed", type="smallint", nullable=false)
+     */
+    private $mailed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="resubmission", type="smallint", nullable=false)
+     */
+    private $resubmission = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="donotuse", type="smallint", nullable=false)
+     */
+    private $donotuse = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="generalcomment", type="text", nullable=true)
+     */
+    private $generalcomment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="teachercomment", type="text", nullable=true)
+     */
+    private $teachercomment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newplugin", type="string", length=28, nullable=true)
+     */
+    private $newplugin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="newid", type="bigint", nullable=true)
+     */
+    private $newid;
+
+
+}

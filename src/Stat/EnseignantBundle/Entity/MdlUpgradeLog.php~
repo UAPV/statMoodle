@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlUpgradeLog
+ *
+ * @ORM\Table(name="mdl_upgrade_log", indexes={@ORM\Index(name="mdl_upgrlog_tim_ix", columns={"timemodified"}), @ORM\Index(name="mdl_upgrlog_typtim_ix", columns={"type", "timemodified"}), @ORM\Index(name="mdl_upgrlog_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlUpgradeLog
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type", type="bigint", nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plugin", type="string", length=100, nullable=true)
+     */
+    private $plugin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="version", type="string", length=100, nullable=true)
+     */
+    private $version;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="targetversion", type="string", length=100, nullable=true)
+     */
+    private $targetversion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="string", length=255, nullable=false)
+     */
+    private $info = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="details", type="text", nullable=true)
+     */
+    private $details;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="backtrace", type="text", nullable=true)
+     */
+    private $backtrace;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

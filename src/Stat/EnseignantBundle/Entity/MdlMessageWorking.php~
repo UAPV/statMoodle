@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMessageWorking
+ *
+ * @ORM\Table(name="mdl_message_working")
+ * @ORM\Entity
+ */
+class MdlMessageWorking
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="unreadmessageid", type="bigint", nullable=false)
+     */
+    private $unreadmessageid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="processorid", type="bigint", nullable=false)
+     */
+    private $processorid;
+
+
+}

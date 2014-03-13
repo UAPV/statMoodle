@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBlockPositions
+ *
+ * @ORM\Table(name="mdl_block_positions", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_blocposi_bloconpagsub_uix", columns={"blockinstanceid", "contextid", "pagetype", "subpage"})}, indexes={@ORM\Index(name="mdl_blocposi_blo_ix", columns={"blockinstanceid"}), @ORM\Index(name="mdl_blocposi_con_ix", columns={"contextid"})})
+ * @ORM\Entity
+ */
+class MdlBlockPositions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="blockinstanceid", type="bigint", nullable=false)
+     */
+    private $blockinstanceid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pagetype", type="string", length=64, nullable=false)
+     */
+    private $pagetype = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subpage", type="string", length=16, nullable=false)
+     */
+    private $subpage = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="visible", type="smallint", nullable=false)
+     */
+    private $visible;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=16, nullable=false)
+     */
+    private $region = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="weight", type="bigint", nullable=false)
+     */
+    private $weight;
+
+
+}

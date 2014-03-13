@@ -1,0 +1,130 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuizQuestionStatistics
+ *
+ * @ORM\Table(name="mdl_quiz_question_statistics")
+ * @ORM\Entity
+ */
+class MdlQuizQuestionStatistics
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quizstatisticsid", type="bigint", nullable=false)
+     */
+    private $quizstatisticsid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="questionid", type="bigint", nullable=false)
+     */
+    private $questionid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="slot", type="bigint", nullable=true)
+     */
+    private $slot;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="subquestion", type="smallint", nullable=false)
+     */
+    private $subquestion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="s", type="bigint", nullable=false)
+     */
+    private $s = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="effectiveweight", type="decimal", precision=15, scale=5, nullable=true)
+     */
+    private $effectiveweight;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="negcovar", type="boolean", nullable=false)
+     */
+    private $negcovar = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="discriminationindex", type="decimal", precision=15, scale=5, nullable=true)
+     */
+    private $discriminationindex;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="discriminativeefficiency", type="decimal", precision=15, scale=5, nullable=true)
+     */
+    private $discriminativeefficiency;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sd", type="decimal", precision=15, scale=10, nullable=true)
+     */
+    private $sd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facility", type="decimal", precision=15, scale=10, nullable=true)
+     */
+    private $facility;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subquestions", type="text", nullable=true)
+     */
+    private $subquestions;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="maxmark", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $maxmark;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="positions", type="text", nullable=true)
+     */
+    private $positions;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="randomguessscore", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $randomguessscore;
+
+
+}

@@ -1,0 +1,256 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScorm
+ *
+ * @ORM\Table(name="mdl_scorm", indexes={@ORM\Index(name="mdl_scor_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlScorm
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="scormtype", type="string", length=50, nullable=false)
+     */
+    private $scormtype = 'local';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=255, nullable=false)
+     */
+    private $reference = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="version", type="string", length=9, nullable=false)
+     */
+    private $version = '';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="maxgrade", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $maxgrade = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="grademethod", type="boolean", nullable=false)
+     */
+    private $grademethod = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="whatgrade", type="bigint", nullable=false)
+     */
+    private $whatgrade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxattempt", type="bigint", nullable=false)
+     */
+    private $maxattempt = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="forcecompleted", type="boolean", nullable=false)
+     */
+    private $forcecompleted = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="forcenewattempt", type="boolean", nullable=false)
+     */
+    private $forcenewattempt = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="lastattemptlock", type="boolean", nullable=false)
+     */
+    private $lastattemptlock = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="displayattemptstatus", type="boolean", nullable=false)
+     */
+    private $displayattemptstatus = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="displaycoursestructure", type="boolean", nullable=false)
+     */
+    private $displaycoursestructure = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="updatefreq", type="boolean", nullable=false)
+     */
+    private $updatefreq = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sha1hash", type="string", length=40, nullable=true)
+     */
+    private $sha1hash;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="md5hash", type="string", length=32, nullable=false)
+     */
+    private $md5hash = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="revision", type="bigint", nullable=false)
+     */
+    private $revision = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="launch", type="bigint", nullable=false)
+     */
+    private $launch = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="skipview", type="boolean", nullable=false)
+     */
+    private $skipview = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hidebrowse", type="boolean", nullable=false)
+     */
+    private $hidebrowse = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hidetoc", type="boolean", nullable=false)
+     */
+    private $hidetoc = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hidenav", type="boolean", nullable=false)
+     */
+    private $hidenav = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="auto", type="boolean", nullable=false)
+     */
+    private $auto = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="popup", type="boolean", nullable=false)
+     */
+    private $popup = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="options", type="string", length=255, nullable=false)
+     */
+    private $options = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="width", type="bigint", nullable=false)
+     */
+    private $width = '100';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="height", type="bigint", nullable=false)
+     */
+    private $height = '600';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeopen", type="bigint", nullable=false)
+     */
+    private $timeopen = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeclose", type="bigint", nullable=false)
+     */
+    private $timeclose = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

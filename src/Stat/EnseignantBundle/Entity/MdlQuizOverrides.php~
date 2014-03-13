@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuizOverrides
+ *
+ * @ORM\Table(name="mdl_quiz_overrides", indexes={@ORM\Index(name="mdl_quizover_qui_ix", columns={"quiz"}), @ORM\Index(name="mdl_quizover_gro_ix", columns={"groupid"}), @ORM\Index(name="mdl_quizover_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlQuizOverrides
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quiz", type="bigint", nullable=false)
+     */
+    private $quiz = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupid", type="bigint", nullable=true)
+     */
+    private $groupid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=true)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeopen", type="bigint", nullable=true)
+     */
+    private $timeopen;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeclose", type="bigint", nullable=true)
+     */
+    private $timeclose;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timelimit", type="bigint", nullable=true)
+     */
+    private $timelimit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attempts", type="integer", nullable=true)
+     */
+    private $attempts;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=true)
+     */
+    private $password;
+
+
+}

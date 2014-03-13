@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlTagCorrelation
+ *
+ * @ORM\Table(name="mdl_tag_correlation", indexes={@ORM\Index(name="mdl_tagcorr_tag_ix", columns={"tagid"})})
+ * @ORM\Entity
+ */
+class MdlTagCorrelation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tagid", type="bigint", nullable=false)
+     */
+    private $tagid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="correlatedtags", type="text", nullable=false)
+     */
+    private $correlatedtags;
+
+
+}

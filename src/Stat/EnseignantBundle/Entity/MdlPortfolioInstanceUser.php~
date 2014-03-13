@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlPortfolioInstanceUser
+ *
+ * @ORM\Table(name="mdl_portfolio_instance_user", indexes={@ORM\Index(name="mdl_portinstuser_ins_ix", columns={"instance"}), @ORM\Index(name="mdl_portinstuser_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlPortfolioInstanceUser
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instance", type="bigint", nullable=false)
+     */
+    private $instance;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="text", nullable=true)
+     */
+    private $value;
+
+
+}

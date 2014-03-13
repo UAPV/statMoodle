@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGlossaryFormats
+ *
+ * @ORM\Table(name="mdl_glossary_formats")
+ * @ORM\Entity
+ */
+class MdlGlossaryFormats
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="popupformatname", type="string", length=50, nullable=false)
+     */
+    private $popupformatname = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showgroup", type="boolean", nullable=false)
+     */
+    private $showgroup = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="defaultmode", type="string", length=50, nullable=false)
+     */
+    private $defaultmode = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="defaulthook", type="string", length=50, nullable=false)
+     */
+    private $defaulthook = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sortkey", type="string", length=50, nullable=false)
+     */
+    private $sortkey = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sortorder", type="string", length=50, nullable=false)
+     */
+    private $sortorder = '';
+
+
+}

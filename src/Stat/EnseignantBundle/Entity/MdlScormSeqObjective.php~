@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScormSeqObjective
+ *
+ * @ORM\Table(name="mdl_scorm_seq_objective", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_scorseqobje_scoid_uix", columns={"scoid", "id"})}, indexes={@ORM\Index(name="mdl_scorseqobje_sco_ix", columns={"scoid"})})
+ * @ORM\Entity
+ */
+class MdlScormSeqObjective
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scoid", type="bigint", nullable=false)
+     */
+    private $scoid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="primaryobj", type="boolean", nullable=false)
+     */
+    private $primaryobj = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="objectiveid", type="string", length=255, nullable=false)
+     */
+    private $objectiveid = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="satisfiedbymeasure", type="boolean", nullable=false)
+     */
+    private $satisfiedbymeasure = '1';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="minnormalizedmeasure", type="float", precision=11, scale=4, nullable=false)
+     */
+    private $minnormalizedmeasure = '0.0000';
+
+
+}

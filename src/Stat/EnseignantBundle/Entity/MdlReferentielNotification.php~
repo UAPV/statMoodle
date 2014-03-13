@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielNotification
+ *
+ * @ORM\Table(name="mdl_referentiel_notification", indexes={@ORM\Index(name="mdl_refenoti_use_ix", columns={"userid"}), @ORM\Index(name="mdl_refenoti_act_ix", columns={"activiteid"})})
+ * @ORM\Entity
+ */
+class MdlReferentielNotification
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="activiteid", type="bigint", nullable=false)
+     */
+    private $activiteid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="type", type="boolean", nullable=false)
+     */
+    private $type = '0';
+
+
+}

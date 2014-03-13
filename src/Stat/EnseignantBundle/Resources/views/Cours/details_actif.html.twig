@@ -1,0 +1,59 @@
+{% extends "StatEnseignantBundle::layout.html.twig" %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.column').each(function()
+            {
+                id = $(this).attr('id');
+                getColumnOrBar(id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(), 'column',$('#'+id+'_max').val());
+            });
+            $('.bar').each(function()
+            {
+                id = $(this).attr('id');
+                getColumnOrBar(id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(),'bar',$('#'+id+'_max').val());
+            });
+            $('.line').each(function()
+            {
+                id = $(this).attr('id');
+                getLineChart(id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(),'line');
+            });
+            $('.lineMultiple').each(function()
+            {
+                id = $(this).attr('id');
+                getMultipleLineChart(id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(),'line');
+            });
+        })
+    </script>
+{% endblock %}
+
+{% block title %}{{ parent() }} - Détails du cours actif {% endblock %}
+{% block menu %}
+    <li>Vue générale</li>
+    <li>
+        <a href="{{ url('stat_enseignant_etudiant_global', { 'id': id | titreCours }) }}">
+            Vue étudiante
+        </a>
+    </li>
+{% endblock %}
+{% block body %}
+    <table id="tabDetailCours" class="table tableCours">
+        {% for tmp in data %}
+            <tr>
+                <th>
+                    <p class="titreCours">{{ tmp['titre'] }}</p>
+                    <p class="descriptionCours">
+                        {% if tmp['description'] is defined %} {{ tmp['description']|raw }}
+                        {% endif %}
+                    </p>
+                </th>
+                <td>
+                    <div id="{{ 'container_' ~ loop.index }}" class="{{ tmp['type'] }}"></div>
+                </td>
+                <input id="{{ 'container_' ~ loop.index ~ '_data' }}" type="hidden" value="{{ tmp['data']|json_encode }}" />
+                <input id="{{ 'container_' ~ loop.index ~ '_titre' }}" type="hidden" value="{{ tmp['titre'] }}" />
+                <input id="{{ 'container_' ~ loop.index ~ '_max' }}" type="hidden" value="{{ tmp['max'] }}" />
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

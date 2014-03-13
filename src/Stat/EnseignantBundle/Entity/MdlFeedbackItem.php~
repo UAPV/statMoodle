@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlFeedbackItem
+ *
+ * @ORM\Table(name="mdl_feedback_item", indexes={@ORM\Index(name="mdl_feeditem_fee_ix", columns={"feedback"}), @ORM\Index(name="mdl_feeditem_tem_ix", columns={"template"})})
+ * @ORM\Entity
+ */
+class MdlFeedbackItem
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedback", type="bigint", nullable=false)
+     */
+    private $feedback = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="template", type="bigint", nullable=false)
+     */
+    private $template = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label", type="string", length=255, nullable=false)
+     */
+    private $label = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presentation", type="text", nullable=false)
+     */
+    private $presentation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typ", type="string", length=255, nullable=false)
+     */
+    private $typ = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hasvalue", type="boolean", nullable=false)
+     */
+    private $hasvalue = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="position", type="smallint", nullable=false)
+     */
+    private $position = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="required", type="boolean", nullable=false)
+     */
+    private $required = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dependitem", type="bigint", nullable=false)
+     */
+    private $dependitem = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dependvalue", type="string", length=255, nullable=false)
+     */
+    private $dependvalue = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="options", type="string", length=255, nullable=false)
+     */
+    private $options = '';
+
+
+}

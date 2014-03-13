@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseCompletions
+ *
+ * @ORM\Table(name="mdl_course_completions", indexes={@ORM\Index(name="mdl_courcomp_use_ix", columns={"userid"}), @ORM\Index(name="mdl_courcomp_cou_ix", columns={"course"}), @ORM\Index(name="mdl_courcomp_tim_ix", columns={"timecompleted"})})
+ * @ORM\Entity
+ */
+class MdlCourseCompletions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=true)
+     */
+    private $deleted;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timenotified", type="bigint", nullable=true)
+     */
+    private $timenotified;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeenrolled", type="bigint", nullable=false)
+     */
+    private $timeenrolled = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timestarted", type="bigint", nullable=false)
+     */
+    private $timestarted = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecompleted", type="bigint", nullable=true)
+     */
+    private $timecompleted;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reaggregate", type="bigint", nullable=false)
+     */
+    private $reaggregate = '0';
+
+
+}

@@ -1,0 +1,186 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradeGradesHistory
+ *
+ * @ORM\Table(name="mdl_grade_grades_history", indexes={@ORM\Index(name="mdl_gradgradhist_act_ix", columns={"action"}), @ORM\Index(name="mdl_gradgradhist_old_ix", columns={"oldid"}), @ORM\Index(name="mdl_gradgradhist_ite_ix", columns={"itemid"}), @ORM\Index(name="mdl_gradgradhist_use_ix", columns={"userid"}), @ORM\Index(name="mdl_gradgradhist_raw_ix", columns={"rawscaleid"}), @ORM\Index(name="mdl_gradgradhist_use2_ix", columns={"usermodified"}), @ORM\Index(name="mdl_gradgradhist_log_ix", columns={"loggeduser"})})
+ * @ORM\Entity
+ */
+class MdlGradeGradesHistory
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="action", type="bigint", nullable=false)
+     */
+    private $action = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="oldid", type="bigint", nullable=false)
+     */
+    private $oldid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="source", type="string", length=255, nullable=true)
+     */
+    private $source;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=true)
+     */
+    private $timemodified;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="loggeduser", type="bigint", nullable=true)
+     */
+    private $loggeduser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rawgrade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $rawgrade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rawgrademax", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $rawgrademax = '100.00000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rawgrademin", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $rawgrademin = '0.00000';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rawscaleid", type="bigint", nullable=true)
+     */
+    private $rawscaleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usermodified", type="bigint", nullable=true)
+     */
+    private $usermodified;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="finalgrade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $finalgrade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hidden", type="bigint", nullable=false)
+     */
+    private $hidden = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="locked", type="bigint", nullable=false)
+     */
+    private $locked = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="locktime", type="bigint", nullable=false)
+     */
+    private $locktime = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="exported", type="bigint", nullable=false)
+     */
+    private $exported = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="overridden", type="bigint", nullable=false)
+     */
+    private $overridden = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="excluded", type="bigint", nullable=false)
+     */
+    private $excluded = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedback", type="text", nullable=true)
+     */
+    private $feedback;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedbackformat", type="bigint", nullable=false)
+     */
+    private $feedbackformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="information", type="text", nullable=true)
+     */
+    private $information;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="informationformat", type="bigint", nullable=false)
+     */
+    private $informationformat = '0';
+
+
+}

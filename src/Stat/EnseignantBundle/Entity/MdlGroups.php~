@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGroups
+ *
+ * @ORM\Table(name="mdl_groups", indexes={@ORM\Index(name="mdl_grou_cou_ix", columns={"courseid"})})
+ * @ORM\Entity
+ */
+class MdlGroups
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=254, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="descriptionformat", type="boolean", nullable=false)
+     */
+    private $descriptionformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enrolmentkey", type="string", length=50, nullable=true)
+     */
+    private $enrolmentkey;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="picture", type="bigint", nullable=false)
+     */
+    private $picture = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hidepicture", type="boolean", nullable=false)
+     */
+    private $hidepicture = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

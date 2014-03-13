@@ -1,0 +1,43 @@
+{% extends "StatEnseignantBundle::layout.html.twig" %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+          var max = 100;
+          $('.spider').each(function()
+          {
+            id = $(this).attr('id');
+            getSpiderWeb(id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(),max);
+          });
+        })
+    </script>
+{% endblock %}
+
+{% block title %}{{ parent() }} - Index{% endblock %}
+
+{% block body %}
+    <table id="tabMesCours" class="table tableCours">
+    {% for id,cours in data %}
+      <tr>
+          <th>
+              <p class="titreCours">{{ cours['fullname'] }}</p>
+              <p class="descriptionCours">
+                  {% if cours['desc'] is defined %} {{ cours['desc']|raw }}
+                  {% endif %}
+              </p>
+          </th>
+          {% for indicateur,tab in cours['donnees'] %}
+          <td>
+              <div id="{{ 'container_' ~ loop.index ~ '_' ~ loop.parent.loop.index }}" class="spider"></div>
+              <a href="{{ url('stat_enseignant_details_actif', { 'id': id | titreCours, 'type' : loop.index }) }}">
+                  <button type="button" class="btn btn-info btn-xs btnDetailsCours">Détails</button>
+              </a>
+          </td>
+          <input id="{{ 'container_' ~ loop.index ~ '_' ~ loop.parent.loop.index ~ '_data' }}" type="hidden" value="{{ tab|json_encode }}" />
+          <input id="{{ 'container_' ~ loop.index ~ '_' ~ loop.parent.loop.index ~ '_titre' }}" type="hidden" value="{{ indicateur }}" />
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

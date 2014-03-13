@@ -1,0 +1,200 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLti
+ *
+ * @ORM\Table(name="mdl_lti", indexes={@ORM\Index(name="mdl_lti_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlLti
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=true)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=true)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="typeid", type="bigint", nullable=true)
+     */
+    private $typeid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="toolurl", type="text", nullable=false)
+     */
+    private $toolurl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="securetoolurl", type="text", nullable=true)
+     */
+    private $securetoolurl;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="instructorchoicesendname", type="boolean", nullable=true)
+     */
+    private $instructorchoicesendname;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="instructorchoicesendemailaddr", type="boolean", nullable=true)
+     */
+    private $instructorchoicesendemailaddr;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="instructorchoiceallowroster", type="boolean", nullable=true)
+     */
+    private $instructorchoiceallowroster;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="instructorchoiceallowsetting", type="boolean", nullable=true)
+     */
+    private $instructorchoiceallowsetting;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instructorcustomparameters", type="string", length=255, nullable=true)
+     */
+    private $instructorcustomparameters;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="instructorchoiceacceptgrades", type="boolean", nullable=true)
+     */
+    private $instructorchoiceacceptgrades;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $grade = '100.00000';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="launchcontainer", type="boolean", nullable=false)
+     */
+    private $launchcontainer = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="resourcekey", type="string", length=255, nullable=true)
+     */
+    private $resourcekey;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=true)
+     */
+    private $password;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="debuglaunch", type="boolean", nullable=false)
+     */
+    private $debuglaunch = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showtitlelaunch", type="boolean", nullable=false)
+     */
+    private $showtitlelaunch = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showdescriptionlaunch", type="boolean", nullable=false)
+     */
+    private $showdescriptionlaunch = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="servicesalt", type="string", length=40, nullable=true)
+     */
+    private $servicesalt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="icon", type="text", nullable=true)
+     */
+    private $icon;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secureicon", type="text", nullable=true)
+     */
+    private $secureicon;
+
+
+}

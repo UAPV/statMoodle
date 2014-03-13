@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWikiLinks
+ *
+ * @ORM\Table(name="mdl_wiki_links", indexes={@ORM\Index(name="mdl_wikilink_fro_ix", columns={"frompageid"}), @ORM\Index(name="mdl_wikilink_sub_ix", columns={"subwikiid"})})
+ * @ORM\Entity
+ */
+class MdlWikiLinks
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="subwikiid", type="bigint", nullable=false)
+     */
+    private $subwikiid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="frompageid", type="bigint", nullable=false)
+     */
+    private $frompageid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="topageid", type="bigint", nullable=false)
+     */
+    private $topageid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tomissingpage", type="string", length=255, nullable=true)
+     */
+    private $tomissingpage;
+
+
+}

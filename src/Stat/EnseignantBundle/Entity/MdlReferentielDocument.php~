@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielDocument
+ *
+ * @ORM\Table(name="mdl_referentiel_document", indexes={@ORM\Index(name="mdl_refedocu_ref_ix", columns={"ref_activite"})})
+ * @ORM\Entity
+ */
+class MdlReferentielDocument
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_document", type="string", length=20, nullable=false)
+     */
+    private $typeDocument = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_document", type="text", nullable=false)
+     */
+    private $descriptionDocument;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url_document", type="string", length=255, nullable=false)
+     */
+    private $urlDocument = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_activite", type="bigint", nullable=false)
+     */
+    private $refActivite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cible_document", type="smallint", nullable=false)
+     */
+    private $cibleDocument = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etiquette_document", type="string", length=255, nullable=false)
+     */
+    private $etiquetteDocument = '';
+
+
+}

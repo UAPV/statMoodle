@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlFeedbackTemplate
+ *
+ * @ORM\Table(name="mdl_feedback_template", indexes={@ORM\Index(name="mdl_feedtemp_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlFeedbackTemplate
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ispublic", type="boolean", nullable=false)
+     */
+    private $ispublic = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+
+}

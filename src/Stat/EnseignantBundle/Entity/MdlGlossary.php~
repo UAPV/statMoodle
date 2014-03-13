@@ -1,0 +1,207 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGlossary
+ *
+ * @ORM\Table(name="mdl_glossary", indexes={@ORM\Index(name="mdl_glos_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlGlossary
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="allowduplicatedentries", type="boolean", nullable=false)
+     */
+    private $allowduplicatedentries = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="displayformat", type="string", length=50, nullable=false)
+     */
+    private $displayformat = 'dictionary';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mainglossary", type="boolean", nullable=false)
+     */
+    private $mainglossary = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showspecial", type="boolean", nullable=false)
+     */
+    private $showspecial = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showalphabet", type="boolean", nullable=false)
+     */
+    private $showalphabet = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showall", type="boolean", nullable=false)
+     */
+    private $showall = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="allowcomments", type="boolean", nullable=false)
+     */
+    private $allowcomments = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="allowprintview", type="boolean", nullable=false)
+     */
+    private $allowprintview = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="usedynalink", type="boolean", nullable=false)
+     */
+    private $usedynalink = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="defaultapproval", type="boolean", nullable=false)
+     */
+    private $defaultapproval = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="globalglossary", type="boolean", nullable=false)
+     */
+    private $globalglossary = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="entbypage", type="smallint", nullable=false)
+     */
+    private $entbypage = '10';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="editalways", type="boolean", nullable=false)
+     */
+    private $editalways = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rsstype", type="boolean", nullable=false)
+     */
+    private $rsstype = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rssarticles", type="boolean", nullable=false)
+     */
+    private $rssarticles = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessed", type="bigint", nullable=false)
+     */
+    private $assessed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assesstimestart", type="bigint", nullable=false)
+     */
+    private $assesstimestart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assesstimefinish", type="bigint", nullable=false)
+     */
+    private $assesstimefinish = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scale", type="bigint", nullable=false)
+     */
+    private $scale = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completionentries", type="integer", nullable=false)
+     */
+    private $completionentries = '0';
+
+
+}

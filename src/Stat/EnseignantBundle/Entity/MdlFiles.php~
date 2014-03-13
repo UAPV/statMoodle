@@ -1,0 +1,151 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlFiles
+ *
+ * @ORM\Table(name="mdl_files", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_file_pat_uix", columns={"pathnamehash"})}, indexes={@ORM\Index(name="mdl_file_comfilconite_ix", columns={"component", "filearea", "contextid", "itemid"}), @ORM\Index(name="mdl_file_con_ix", columns={"contenthash"}), @ORM\Index(name="mdl_file_con2_ix", columns={"contextid"}), @ORM\Index(name="mdl_file_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlFiles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenthash", type="string", length=40, nullable=false)
+     */
+    private $contenthash = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pathnamehash", type="string", length=40, nullable=false)
+     */
+    private $pathnamehash = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filearea", type="string", length=50, nullable=false)
+     */
+    private $filearea = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filepath", type="string", length=255, nullable=false)
+     */
+    private $filepath = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filename", type="string", length=255, nullable=false)
+     */
+    private $filename = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=true)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="filesize", type="bigint", nullable=false)
+     */
+    private $filesize;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mimetype", type="string", length=100, nullable=true)
+     */
+    private $mimetype;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="bigint", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="source", type="text", nullable=true)
+     */
+    private $source;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="author", type="string", length=255, nullable=true)
+     */
+    private $author;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="license", type="string", length=255, nullable=true)
+     */
+    private $license;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+
+}

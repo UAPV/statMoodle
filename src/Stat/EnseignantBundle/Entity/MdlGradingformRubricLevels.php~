@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradingformRubricLevels
+ *
+ * @ORM\Table(name="mdl_gradingform_rubric_levels", indexes={@ORM\Index(name="mdl_gradrubrleve_cri_ix", columns={"criterionid"})})
+ * @ORM\Entity
+ */
+class MdlGradingformRubricLevels
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="criterionid", type="bigint", nullable=false)
+     */
+    private $criterionid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="score", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $score;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="definition", type="text", nullable=true)
+     */
+    private $definition;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="definitionformat", type="bigint", nullable=true)
+     */
+    private $definitionformat;
+
+
+}

@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetRemoteRpc
+ *
+ * @ORM\Table(name="mdl_mnet_remote_rpc")
+ * @ORM\Entity
+ */
+class MdlMnetRemoteRpc
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="functionname", type="string", length=40, nullable=false)
+     */
+    private $functionname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="xmlrpcpath", type="string", length=80, nullable=false)
+     */
+    private $xmlrpcpath = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plugintype", type="string", length=20, nullable=false)
+     */
+    private $plugintype = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pluginname", type="string", length=20, nullable=false)
+     */
+    private $pluginname = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enabled", type="boolean", nullable=false)
+     */
+    private $enabled;
+
+
+}

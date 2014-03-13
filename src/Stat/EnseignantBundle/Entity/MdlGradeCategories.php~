@@ -1,0 +1,123 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradeCategories
+ *
+ * @ORM\Table(name="mdl_grade_categories", indexes={@ORM\Index(name="mdl_gradcate_cou_ix", columns={"courseid"}), @ORM\Index(name="mdl_gradcate_par_ix", columns={"parent"})})
+ * @ORM\Entity
+ */
+class MdlGradeCategories
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="parent", type="bigint", nullable=true)
+     */
+    private $parent;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="depth", type="bigint", nullable=false)
+     */
+    private $depth = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     */
+    private $path;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullname", type="string", length=255, nullable=false)
+     */
+    private $fullname = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aggregation", type="bigint", nullable=false)
+     */
+    private $aggregation = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="keephigh", type="bigint", nullable=false)
+     */
+    private $keephigh = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="droplow", type="bigint", nullable=false)
+     */
+    private $droplow = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="aggregateonlygraded", type="boolean", nullable=false)
+     */
+    private $aggregateonlygraded = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="aggregateoutcomes", type="boolean", nullable=false)
+     */
+    private $aggregateoutcomes = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="aggregatesubcats", type="boolean", nullable=false)
+     */
+    private $aggregatesubcats = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hidden", type="boolean", nullable=false)
+     */
+    private $hidden = '0';
+
+
+}

@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlStatsMonthly
+ *
+ * @ORM\Table(name="mdl_stats_monthly", indexes={@ORM\Index(name="mdl_statmont_cou_ix", columns={"courseid"}), @ORM\Index(name="mdl_statmont_tim_ix", columns={"timeend"}), @ORM\Index(name="mdl_statmont_rol_ix", columns={"roleid"})})
+ * @ORM\Entity
+ */
+class MdlStatsMonthly
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeend", type="bigint", nullable=false)
+     */
+    private $timeend = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="roleid", type="bigint", nullable=false)
+     */
+    private $roleid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stattype", type="string", length=20, nullable=false)
+     */
+    private $stattype = 'activity';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="stat1", type="bigint", nullable=false)
+     */
+    private $stat1 = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="stat2", type="bigint", nullable=false)
+     */
+    private $stat2 = '0';
+
+
+}

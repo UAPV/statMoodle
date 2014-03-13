@@ -1,0 +1,33 @@
+{% extends "StatEnseignantBundle::layout.html.twig" %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.column').each(function()
+            {
+                id = $(this).attr('id');
+                getColumnOrBar(id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(), 'column');
+            });
+            $('.stackedBar').each(function()
+            {
+                id = $(this).attr('id');
+
+                //getStackedBarChart(id,$('#'+id+'_data').val(),"");
+            });
+        })
+    </script>
+{% endblock %}
+
+{% block title %}{{ parent() }} - Détails de l'étudiant pour le cours {% endblock %}
+
+{% block body %}
+    <h1>Détails de l'étudiant(e) "{{ name }}" pour ce cours</h1>
+    <table id="tabDetailCours" class="table tableCours">
+        <tr>
+            <td>
+                <div id="container" class="stackedBar"></div>
+            </td>
+            <input id="container_data" type="hidden" value="{{ data|json_encode }}" />
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseCompletionCriteria
+ *
+ * @ORM\Table(name="mdl_course_completion_criteria", indexes={@ORM\Index(name="mdl_courcompcrit_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlCourseCompletionCriteria
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="criteriatype", type="bigint", nullable=false)
+     */
+    private $criteriatype = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="module", type="string", length=100, nullable=true)
+     */
+    private $module;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="moduleinstance", type="bigint", nullable=true)
+     */
+    private $moduleinstance;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseinstance", type="bigint", nullable=true)
+     */
+    private $courseinstance;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enrolperiod", type="bigint", nullable=true)
+     */
+    private $enrolperiod;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeend", type="bigint", nullable=true)
+     */
+    private $timeend;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradepass", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $gradepass;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="role", type="bigint", nullable=true)
+     */
+    private $role;
+
+
+}

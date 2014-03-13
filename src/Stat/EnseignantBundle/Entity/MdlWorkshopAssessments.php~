@@ -1,0 +1,116 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopAssessments
+ *
+ * @ORM\Table(name="mdl_workshop_assessments", indexes={@ORM\Index(name="mdl_workasse_sub_ix", columns={"submissionid"}), @ORM\Index(name="mdl_workasse_gra_ix", columns={"gradinggradeoverby"}), @ORM\Index(name="mdl_workasse_rev_ix", columns={"reviewerid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopAssessments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="submissionid", type="bigint", nullable=false)
+     */
+    private $submissionid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewerid", type="bigint", nullable=false)
+     */
+    private $reviewerid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="weight", type="bigint", nullable=false)
+     */
+    private $weight = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=true)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=true)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $grade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradinggrade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $gradinggrade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradinggradeover", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $gradinggradeover;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gradinggradeoverby", type="bigint", nullable=true)
+     */
+    private $gradinggradeoverby;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedbackauthor", type="text", nullable=true)
+     */
+    private $feedbackauthor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedbackauthorformat", type="smallint", nullable=true)
+     */
+    private $feedbackauthorformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedbackreviewer", type="text", nullable=true)
+     */
+    private $feedbackreviewer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedbackreviewerformat", type="smallint", nullable=true)
+     */
+    private $feedbackreviewerformat = '0';
+
+
+}

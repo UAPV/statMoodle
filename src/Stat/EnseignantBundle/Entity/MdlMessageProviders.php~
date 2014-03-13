@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMessageProviders
+ *
+ * @ORM\Table(name="mdl_message_providers", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_messprov_comnam_uix", columns={"component", "name"})})
+ * @ORM\Entity
+ */
+class MdlMessageProviders
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=200, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="capability", type="string", length=255, nullable=true)
+     */
+    private $capability;
+
+
+}

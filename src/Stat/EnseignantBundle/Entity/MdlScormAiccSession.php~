@@ -1,0 +1,102 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScormAiccSession
+ *
+ * @ORM\Table(name="mdl_scorm_aicc_session", indexes={@ORM\Index(name="mdl_scoraiccsess_sco_ix", columns={"scormid"}), @ORM\Index(name="mdl_scoraiccsess_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlScormAiccSession
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scormid", type="bigint", nullable=false)
+     */
+    private $scormid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="hacpsession", type="string", length=255, nullable=false)
+     */
+    private $hacpsession = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scoid", type="bigint", nullable=true)
+     */
+    private $scoid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="scormmode", type="string", length=50, nullable=true)
+     */
+    private $scormmode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="scormstatus", type="string", length=255, nullable=true)
+     */
+    private $scormstatus;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attempt", type="bigint", nullable=true)
+     */
+    private $attempt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lessonstatus", type="string", length=255, nullable=true)
+     */
+    private $lessonstatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sessiontime", type="string", length=255, nullable=true)
+     */
+    private $sessiontime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

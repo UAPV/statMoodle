@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielActiviteModules
+ *
+ * @ORM\Table(name="mdl_referentiel_activite_modules")
+ * @ORM\Entity
+ */
+class MdlReferentielActiviteModules
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=80, nullable=false)
+     */
+    private $type = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="moduleid", type="bigint", nullable=false)
+     */
+    private $moduleid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_instance", type="bigint", nullable=false)
+     */
+    private $refInstance = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_referentiel", type="bigint", nullable=false)
+     */
+    private $refReferentiel = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_course", type="bigint", nullable=false)
+     */
+    private $refCourse = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="activiteid", type="bigint", nullable=false)
+     */
+    private $activiteid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_activite", type="bigint", nullable=false)
+     */
+    private $refActivite = '0';
+
+
+}

@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLogQueries
+ *
+ * @ORM\Table(name="mdl_log_queries")
+ * @ORM\Entity
+ */
+class MdlLogQueries
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="qtype", type="integer", nullable=false)
+     */
+    private $qtype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sqltext", type="text", nullable=false)
+     */
+    private $sqltext;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sqlparams", type="text", nullable=true)
+     */
+    private $sqlparams;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="error", type="integer", nullable=false)
+     */
+    private $error = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="text", nullable=true)
+     */
+    private $info;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="backtrace", type="text", nullable=true)
+     */
+    private $backtrace;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="exectime", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $exectime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timelogged", type="bigint", nullable=false)
+     */
+    private $timelogged;
+
+
+}

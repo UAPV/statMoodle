@@ -1,0 +1,137 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlFeedback
+ *
+ * @ORM\Table(name="mdl_feedback", indexes={@ORM\Index(name="mdl_feed_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlFeedback
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="anonymous", type="boolean", nullable=false)
+     */
+    private $anonymous = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="email_notification", type="boolean", nullable=false)
+     */
+    private $emailNotification = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="multiple_submit", type="boolean", nullable=false)
+     */
+    private $multipleSubmit = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="autonumbering", type="boolean", nullable=false)
+     */
+    private $autonumbering = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="site_after_submit", type="string", length=255, nullable=false)
+     */
+    private $siteAfterSubmit = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="page_after_submit", type="text", nullable=false)
+     */
+    private $pageAfterSubmit;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="page_after_submitformat", type="boolean", nullable=false)
+     */
+    private $pageAfterSubmitformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="publish_stats", type="boolean", nullable=false)
+     */
+    private $publishStats = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeopen", type="bigint", nullable=false)
+     */
+    private $timeopen = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeclose", type="bigint", nullable=false)
+     */
+    private $timeclose = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completionsubmit", type="boolean", nullable=false)
+     */
+    private $completionsubmit = '0';
+
+
+}

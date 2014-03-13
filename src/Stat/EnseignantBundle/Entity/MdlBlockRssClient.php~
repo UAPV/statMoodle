@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBlockRssClient
+ *
+ * @ORM\Table(name="mdl_block_rss_client")
+ * @ORM\Entity
+ */
+class MdlBlockRssClient
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text", nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preferredtitle", type="string", length=64, nullable=false)
+     */
+    private $preferredtitle = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="shared", type="boolean", nullable=false)
+     */
+    private $shared = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=false)
+     */
+    private $url = '';
+
+
+}

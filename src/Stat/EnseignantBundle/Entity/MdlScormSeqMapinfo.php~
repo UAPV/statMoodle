@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScormSeqMapinfo
+ *
+ * @ORM\Table(name="mdl_scorm_seq_mapinfo", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_scorseqmapi_scoidobj_uix", columns={"scoid", "id", "objectiveid"})}, indexes={@ORM\Index(name="mdl_scorseqmapi_sco_ix", columns={"scoid"}), @ORM\Index(name="mdl_scorseqmapi_obj_ix", columns={"objectiveid"})})
+ * @ORM\Entity
+ */
+class MdlScormSeqMapinfo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scoid", type="bigint", nullable=false)
+     */
+    private $scoid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="objectiveid", type="bigint", nullable=false)
+     */
+    private $objectiveid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="targetobjectiveid", type="bigint", nullable=false)
+     */
+    private $targetobjectiveid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="readsatisfiedstatus", type="boolean", nullable=false)
+     */
+    private $readsatisfiedstatus = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="readnormalizedmeasure", type="boolean", nullable=false)
+     */
+    private $readnormalizedmeasure = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="writesatisfiedstatus", type="boolean", nullable=false)
+     */
+    private $writesatisfiedstatus = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="writenormalizedmeasure", type="boolean", nullable=false)
+     */
+    private $writenormalizedmeasure = '0';
+
+
+}

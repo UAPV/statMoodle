@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielCompetence
+ *
+ * @ORM\Table(name="mdl_referentiel_competence", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_refecomp_codref_uix", columns={"code_competence", "ref_domaine"})})
+ * @ORM\Entity
+ */
+class MdlReferentielCompetence
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_competence", type="string", length=20, nullable=false)
+     */
+    private $codeCompetence = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_competence", type="text", nullable=false)
+     */
+    private $descriptionCompetence;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_domaine", type="bigint", nullable=false)
+     */
+    private $refDomaine = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="num_competence", type="boolean", nullable=false)
+     */
+    private $numCompetence = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="nb_item_competences", type="boolean", nullable=false)
+     */
+    private $nbItemCompetences = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_competence", type="string", length=10, nullable=false)
+     */
+    private $typeCompetence = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seuil_competence", type="string", length=10, nullable=false)
+     */
+    private $seuilCompetence = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="minima_competence", type="string", length=10, nullable=false)
+     */
+    private $minimaCompetence = '0';
+
+
+}

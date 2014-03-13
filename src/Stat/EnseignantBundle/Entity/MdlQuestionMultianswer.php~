@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionMultianswer
+ *
+ * @ORM\Table(name="mdl_question_multianswer", indexes={@ORM\Index(name="mdl_quesmult_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionMultianswer
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sequence", type="text", nullable=false)
+     */
+    private $sequence;
+
+
+}

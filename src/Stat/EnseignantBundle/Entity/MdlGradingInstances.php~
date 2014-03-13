@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradingInstances
+ *
+ * @ORM\Table(name="mdl_grading_instances", indexes={@ORM\Index(name="mdl_gradinst_def_ix", columns={"definitionid"}), @ORM\Index(name="mdl_gradinst_rat_ix", columns={"raterid"})})
+ * @ORM\Entity
+ */
+class MdlGradingInstances
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="definitionid", type="bigint", nullable=false)
+     */
+    private $definitionid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="raterid", type="bigint", nullable=false)
+     */
+    private $raterid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=true)
+     */
+    private $itemid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rawgrade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $rawgrade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="bigint", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedback", type="text", nullable=true)
+     */
+    private $feedback;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="feedbackformat", type="boolean", nullable=true)
+     */
+    private $feedbackformat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

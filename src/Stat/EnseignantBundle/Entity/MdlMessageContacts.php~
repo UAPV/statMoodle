@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMessageContacts
+ *
+ * @ORM\Table(name="mdl_message_contacts", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_messcont_usecon_uix", columns={"userid", "contactid"})})
+ * @ORM\Entity
+ */
+class MdlMessageContacts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contactid", type="bigint", nullable=false)
+     */
+    private $contactid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="blocked", type="boolean", nullable=false)
+     */
+    private $blocked = '0';
+
+
+}

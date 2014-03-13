@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionUsages
+ *
+ * @ORM\Table(name="mdl_question_usages", indexes={@ORM\Index(name="mdl_quesusag_con_ix", columns={"contextid"})})
+ * @ORM\Entity
+ */
+class MdlQuestionUsages
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=255, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preferredbehaviour", type="string", length=32, nullable=false)
+     */
+    private $preferredbehaviour = '';
+
+
+}

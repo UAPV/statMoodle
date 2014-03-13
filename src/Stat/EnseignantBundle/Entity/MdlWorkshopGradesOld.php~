@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopGradesOld
+ *
+ * @ORM\Table(name="mdl_workshop_grades_old", indexes={@ORM\Index(name="mdl_workgradold_wor_ix", columns={"workshopid"}), @ORM\Index(name="mdl_workgradold_ass_ix", columns={"assessmentid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopGradesOld
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessmentid", type="bigint", nullable=false)
+     */
+    private $assessmentid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="elementno", type="bigint", nullable=false)
+     */
+    private $elementno = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedback", type="text", nullable=false)
+     */
+    private $feedback;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="grade", type="smallint", nullable=false)
+     */
+    private $grade = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newplugin", type="string", length=28, nullable=true)
+     */
+    private $newplugin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="newid", type="bigint", nullable=true)
+     */
+    private $newid;
+
+
+}

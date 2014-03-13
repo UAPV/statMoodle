@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionTruefalse
+ *
+ * @ORM\Table(name="mdl_question_truefalse", indexes={@ORM\Index(name="mdl_questrue_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionTruefalse
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="trueanswer", type="bigint", nullable=false)
+     */
+    private $trueanswer = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="falseanswer", type="bigint", nullable=false)
+     */
+    private $falseanswer = '0';
+
+
+}

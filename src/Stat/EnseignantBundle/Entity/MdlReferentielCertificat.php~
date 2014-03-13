@@ -1,0 +1,123 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielCertificat
+ *
+ * @ORM\Table(name="mdl_referentiel_certificat", indexes={@ORM\Index(name="mdl_refecert_use_ix", columns={"userid"}), @ORM\Index(name="mdl_refecert_ref_ix", columns={"ref_referentiel"})})
+ * @ORM\Entity
+ */
+class MdlReferentielCertificat
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_certificat", type="text", nullable=false)
+     */
+    private $commentaireCertificat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="competences_certificat", type="text", nullable=false)
+     */
+    private $competencesCertificat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="competences_activite", type="text", nullable=false)
+     */
+    private $competencesActivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="decision_jury", type="string", length=80, nullable=false)
+     */
+    private $decisionJury = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_decision", type="bigint", nullable=false)
+     */
+    private $dateDecision = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_referentiel", type="bigint", nullable=false)
+     */
+    private $refReferentiel = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="teacherid", type="bigint", nullable=false)
+     */
+    private $teacherid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="verrou", type="boolean", nullable=false)
+     */
+    private $verrou;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="valide", type="boolean", nullable=false)
+     */
+    private $valide;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="evaluation", type="bigint", nullable=false)
+     */
+    private $evaluation;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mailed", type="boolean", nullable=false)
+     */
+    private $mailed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mailnow", type="bigint", nullable=false)
+     */
+    private $mailnow = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synthese_certificat", type="text", nullable=false)
+     */
+    private $syntheseCertificat;
+
+
+}

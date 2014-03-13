@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLicense
+ *
+ * @ORM\Table(name="mdl_license")
+ * @ORM\Entity
+ */
+class MdlLicense
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortname", type="string", length=255, nullable=true)
+     */
+    private $shortname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullname", type="text", nullable=true)
+     */
+    private $fullname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="source", type="string", length=255, nullable=true)
+     */
+    private $source;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enabled", type="boolean", nullable=false)
+     */
+    private $enabled = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="version", type="bigint", nullable=false)
+     */
+    private $version = '0';
+
+
+}

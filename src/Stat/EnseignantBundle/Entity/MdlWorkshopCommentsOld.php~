@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopCommentsOld
+ *
+ * @ORM\Table(name="mdl_workshop_comments_old", indexes={@ORM\Index(name="mdl_workcommold_use_ix", columns={"userid"}), @ORM\Index(name="mdl_workcommold_mai_ix", columns={"mailed"}), @ORM\Index(name="mdl_workcommold_wor_ix", columns={"workshopid"}), @ORM\Index(name="mdl_workcommold_ass_ix", columns={"assessmentid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopCommentsOld
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessmentid", type="bigint", nullable=false)
+     */
+    private $assessmentid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mailed", type="boolean", nullable=false)
+     */
+    private $mailed = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comments", type="text", nullable=false)
+     */
+    private $comments;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newplugin", type="string", length=28, nullable=true)
+     */
+    private $newplugin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="newid", type="bigint", nullable=true)
+     */
+    private $newid;
+
+
+}

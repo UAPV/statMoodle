@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetHost2service
+ *
+ * @ORM\Table(name="mdl_mnet_host2service", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_mnethost_hosser_uix", columns={"hostid", "serviceid"})})
+ * @ORM\Entity
+ */
+class MdlMnetHost2service
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hostid", type="bigint", nullable=false)
+     */
+    private $hostid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="serviceid", type="bigint", nullable=false)
+     */
+    private $serviceid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="publish", type="boolean", nullable=false)
+     */
+    private $publish = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="subscribe", type="boolean", nullable=false)
+     */
+    private $subscribe = '0';
+
+
+}

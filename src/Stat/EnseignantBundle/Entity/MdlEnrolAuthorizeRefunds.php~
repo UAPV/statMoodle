@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlEnrolAuthorizeRefunds
+ *
+ * @ORM\Table(name="mdl_enrol_authorize_refunds", indexes={@ORM\Index(name="mdl_enroauthrefu_tra_ix", columns={"transid"}), @ORM\Index(name="mdl_enroauthrefu_ord_ix", columns={"orderid"})})
+ * @ORM\Entity
+ */
+class MdlEnrolAuthorizeRefunds
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="orderid", type="bigint", nullable=false)
+     */
+    private $orderid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="amount", type="string", length=10, nullable=false)
+     */
+    private $amount = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="transid", type="bigint", nullable=true)
+     */
+    private $transid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="settletime", type="bigint", nullable=false)
+     */
+    private $settletime = '0';
+
+
+}

@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseModulesAvailability
+ *
+ * @ORM\Table(name="mdl_course_modules_availability", indexes={@ORM\Index(name="mdl_courmoduavai_cou_ix", columns={"coursemoduleid"}), @ORM\Index(name="mdl_courmoduavai_sou_ix", columns={"sourcecmid"}), @ORM\Index(name="mdl_courmoduavai_gra_ix", columns={"gradeitemid"})})
+ * @ORM\Entity
+ */
+class MdlCourseModulesAvailability
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="coursemoduleid", type="bigint", nullable=false)
+     */
+    private $coursemoduleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sourcecmid", type="bigint", nullable=true)
+     */
+    private $sourcecmid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="requiredcompletion", type="boolean", nullable=true)
+     */
+    private $requiredcompletion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gradeitemid", type="bigint", nullable=true)
+     */
+    private $gradeitemid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grademin", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $grademin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grademax", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $grademax;
+
+
+}

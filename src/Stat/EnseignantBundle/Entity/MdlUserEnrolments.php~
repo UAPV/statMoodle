@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlUserEnrolments
+ *
+ * @ORM\Table(name="mdl_user_enrolments", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_userenro_enruse_uix", columns={"enrolid", "userid"})}, indexes={@ORM\Index(name="mdl_userenro_enr_ix", columns={"enrolid"}), @ORM\Index(name="mdl_userenro_use_ix", columns={"userid"}), @ORM\Index(name="mdl_userenro_mod_ix", columns={"modifierid"})})
+ * @ORM\Entity
+ */
+class MdlUserEnrolments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="bigint", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enrolid", type="bigint", nullable=false)
+     */
+    private $enrolid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timestart", type="bigint", nullable=false)
+     */
+    private $timestart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeend", type="bigint", nullable=false)
+     */
+    private $timeend = '2147483647';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modifierid", type="bigint", nullable=false)
+     */
+    private $modifierid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

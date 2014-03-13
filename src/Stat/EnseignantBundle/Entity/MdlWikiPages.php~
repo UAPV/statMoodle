@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWikiPages
+ *
+ * @ORM\Table(name="mdl_wiki_pages", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_wikipage_subtituse_uix", columns={"subwikiid", "title", "userid"})}, indexes={@ORM\Index(name="mdl_wikipage_sub_ix", columns={"subwikiid"})})
+ * @ORM\Entity
+ */
+class MdlWikiPages
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="subwikiid", type="bigint", nullable=false)
+     */
+    private $subwikiid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title = 'title';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cachedcontent", type="text", nullable=false)
+     */
+    private $cachedcontent;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timerendered", type="bigint", nullable=false)
+     */
+    private $timerendered = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pageviews", type="bigint", nullable=false)
+     */
+    private $pageviews = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="readonly", type="boolean", nullable=false)
+     */
+    private $readonly = '0';
+
+
+}

@@ -1,0 +1,130 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlTimezone
+ *
+ * @ORM\Table(name="mdl_timezone")
+ * @ORM\Entity
+ */
+class MdlTimezone
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="year", type="bigint", nullable=false)
+     */
+    private $year = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tzrule", type="string", length=20, nullable=false)
+     */
+    private $tzrule = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gmtoff", type="bigint", nullable=false)
+     */
+    private $gmtoff = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dstoff", type="bigint", nullable=false)
+     */
+    private $dstoff = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="dst_month", type="boolean", nullable=false)
+     */
+    private $dstMonth = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dst_startday", type="smallint", nullable=false)
+     */
+    private $dstStartday = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dst_weekday", type="smallint", nullable=false)
+     */
+    private $dstWeekday = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dst_skipweeks", type="smallint", nullable=false)
+     */
+    private $dstSkipweeks = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dst_time", type="string", length=6, nullable=false)
+     */
+    private $dstTime = '00:00';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="std_month", type="boolean", nullable=false)
+     */
+    private $stdMonth = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="std_startday", type="smallint", nullable=false)
+     */
+    private $stdStartday = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="std_weekday", type="smallint", nullable=false)
+     */
+    private $stdWeekday = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="std_skipweeks", type="smallint", nullable=false)
+     */
+    private $stdSkipweeks = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="std_time", type="string", length=6, nullable=false)
+     */
+    private $stdTime = '00:00';
+
+
+}

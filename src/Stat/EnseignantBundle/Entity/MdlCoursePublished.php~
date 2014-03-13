@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCoursePublished
+ *
+ * @ORM\Table(name="mdl_course_published")
+ * @ORM\Entity
+ */
+class MdlCoursePublished
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="huburl", type="string", length=255, nullable=true)
+     */
+    private $huburl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timepublished", type="bigint", nullable=false)
+     */
+    private $timepublished;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enrollable", type="boolean", nullable=false)
+     */
+    private $enrollable = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hubcourseid", type="bigint", nullable=false)
+     */
+    private $hubcourseid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=true)
+     */
+    private $status = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timechecked", type="bigint", nullable=true)
+     */
+    private $timechecked;
+
+
+}

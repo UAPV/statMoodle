@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlRoleSortorder
+ *
+ * @ORM\Table(name="mdl_role_sortorder", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_rolesort_userolcon_uix", columns={"userid", "roleid", "contextid"})}, indexes={@ORM\Index(name="mdl_rolesort_use_ix", columns={"userid"}), @ORM\Index(name="mdl_rolesort_rol_ix", columns={"roleid"}), @ORM\Index(name="mdl_rolesort_con_ix", columns={"contextid"})})
+ * @ORM\Entity
+ */
+class MdlRoleSortorder
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="roleid", type="bigint", nullable=false)
+     */
+    private $roleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortoder", type="bigint", nullable=false)
+     */
+    private $sortoder;
+
+
+}

@@ -1,0 +1,116 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlForumPosts
+ *
+ * @ORM\Table(name="mdl_forum_posts", indexes={@ORM\Index(name="mdl_forupost_use_ix", columns={"userid"}), @ORM\Index(name="mdl_forupost_cre_ix", columns={"created"}), @ORM\Index(name="mdl_forupost_mai_ix", columns={"mailed"}), @ORM\Index(name="mdl_forupost_dis_ix", columns={"discussion"}), @ORM\Index(name="mdl_forupost_par_ix", columns={"parent"})})
+ * @ORM\Entity
+ */
+class MdlForumPosts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="discussion", type="bigint", nullable=false)
+     */
+    private $discussion = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="parent", type="bigint", nullable=false)
+     */
+    private $parent = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created", type="bigint", nullable=false)
+     */
+    private $created = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modified", type="bigint", nullable=false)
+     */
+    private $modified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mailed", type="boolean", nullable=false)
+     */
+    private $mailed = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subject", type="string", length=255, nullable=false)
+     */
+    private $subject = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="text", nullable=false)
+     */
+    private $message;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="messageformat", type="boolean", nullable=false)
+     */
+    private $messageformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="messagetrust", type="boolean", nullable=false)
+     */
+    private $messagetrust = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="attachment", type="string", length=100, nullable=false)
+     */
+    private $attachment = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="totalscore", type="smallint", nullable=false)
+     */
+    private $totalscore = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mailnow", type="bigint", nullable=false)
+     */
+    private $mailnow = '0';
+
+
+}

@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlEventsHandlers
+ *
+ * @ORM\Table(name="mdl_events_handlers", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_evenhand_evecom_uix", columns={"eventname", "component"})})
+ * @ORM\Entity
+ */
+class MdlEventsHandlers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="eventname", type="string", length=166, nullable=false)
+     */
+    private $eventname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=166, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="handlerfile", type="string", length=255, nullable=false)
+     */
+    private $handlerfile = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="handlerfunction", type="text", nullable=true)
+     */
+    private $handlerfunction;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="schedule", type="string", length=255, nullable=true)
+     */
+    private $schedule;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="bigint", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="internal", type="boolean", nullable=false)
+     */
+    private $internal = '1';
+
+
+}

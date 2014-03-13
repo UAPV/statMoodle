@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopGrades
+ *
+ * @ORM\Table(name="mdl_workshop_grades", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_workgrad_assstrdim_uix", columns={"assessmentid", "strategy", "dimensionid"})}, indexes={@ORM\Index(name="mdl_workgrad_ass_ix", columns={"assessmentid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopGrades
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessmentid", type="bigint", nullable=false)
+     */
+    private $assessmentid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="strategy", type="string", length=30, nullable=false)
+     */
+    private $strategy = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dimensionid", type="bigint", nullable=false)
+     */
+    private $dimensionid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $grade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="peercomment", type="text", nullable=true)
+     */
+    private $peercomment;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="peercommentformat", type="smallint", nullable=true)
+     */
+    private $peercommentformat = '0';
+
+
+}

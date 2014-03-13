@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielAUserTask
+ *
+ * @ORM\Table(name="mdl_referentiel_a_user_task", indexes={@ORM\Index(name="mdl_refeausertask_ref_ix", columns={"ref_task"})})
+ * @ORM\Entity
+ */
+class MdlReferentielAUserTask
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_user", type="bigint", nullable=false)
+     */
+    private $refUser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_task", type="bigint", nullable=false)
+     */
+    private $refTask;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_selection", type="bigint", nullable=false)
+     */
+    private $dateSelection = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_activite", type="bigint", nullable=false)
+     */
+    private $refActivite;
+
+
+}

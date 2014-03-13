@@ -1,0 +1,137 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielActivite
+ *
+ * @ORM\Table(name="mdl_referentiel_activite", indexes={@ORM\Index(name="mdl_refeacti_use_ix", columns={"userid"}), @ORM\Index(name="mdl_refeacti_ref_ix", columns={"ref_instance"}), @ORM\Index(name="mdl_refeacti_ref2_ix", columns={"ref_referentiel"})})
+ * @ORM\Entity
+ */
+class MdlReferentielActivite
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_activite", type="string", length=255, nullable=false)
+     */
+    private $typeActivite = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_activite", type="text", nullable=false)
+     */
+    private $descriptionActivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="competences_activite", type="text", nullable=false)
+     */
+    private $competencesActivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_activite", type="text", nullable=false)
+     */
+    private $commentaireActivite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_instance", type="bigint", nullable=false)
+     */
+    private $refInstance = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_referentiel", type="bigint", nullable=false)
+     */
+    private $refReferentiel = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_course", type="bigint", nullable=false)
+     */
+    private $refCourse = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="teacherid", type="bigint", nullable=false)
+     */
+    private $teacherid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_creation", type="bigint", nullable=false)
+     */
+    private $dateCreation = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_modif_student", type="bigint", nullable=false)
+     */
+    private $dateModifStudent = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_modif", type="bigint", nullable=false)
+     */
+    private $dateModif = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="approved", type="smallint", nullable=false)
+     */
+    private $approved = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_task", type="bigint", nullable=false)
+     */
+    private $refTask = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mailed", type="boolean", nullable=false)
+     */
+    private $mailed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mailnow", type="bigint", nullable=false)
+     */
+    private $mailnow = '0';
+
+
+}

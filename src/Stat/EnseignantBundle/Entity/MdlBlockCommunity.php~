@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBlockCommunity
+ *
+ * @ORM\Table(name="mdl_block_community")
+ * @ORM\Entity
+ */
+class MdlBlockCommunity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coursename", type="string", length=255, nullable=false)
+     */
+    private $coursename = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coursedescription", type="text", nullable=true)
+     */
+    private $coursedescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courseurl", type="string", length=255, nullable=false)
+     */
+    private $courseurl = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageurl", type="string", length=255, nullable=false)
+     */
+    private $imageurl = '';
+
+
+}

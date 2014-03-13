@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLessonGrades
+ *
+ * @ORM\Table(name="mdl_lesson_grades", indexes={@ORM\Index(name="mdl_lessgrad_use_ix", columns={"userid"}), @ORM\Index(name="mdl_lessgrad_les_ix", columns={"lessonid"})})
+ * @ORM\Entity
+ */
+class MdlLessonGrades
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lessonid", type="bigint", nullable=false)
+     */
+    private $lessonid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="grade", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $grade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="late", type="smallint", nullable=false)
+     */
+    private $late = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completed", type="bigint", nullable=false)
+     */
+    private $completed = '0';
+
+
+}

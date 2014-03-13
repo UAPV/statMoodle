@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLessonAnswers
+ *
+ * @ORM\Table(name="mdl_lesson_answers", indexes={@ORM\Index(name="mdl_lessansw_les_ix", columns={"lessonid"}), @ORM\Index(name="mdl_lessansw_pag_ix", columns={"pageid"})})
+ * @ORM\Entity
+ */
+class MdlLessonAnswers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lessonid", type="bigint", nullable=false)
+     */
+    private $lessonid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pageid", type="bigint", nullable=false)
+     */
+    private $pageid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="jumpto", type="bigint", nullable=false)
+     */
+    private $jumpto = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="grade", type="smallint", nullable=false)
+     */
+    private $grade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="score", type="bigint", nullable=false)
+     */
+    private $score = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="flags", type="smallint", nullable=false)
+     */
+    private $flags = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answer", type="text", nullable=true)
+     */
+    private $answer;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="answerformat", type="boolean", nullable=false)
+     */
+    private $answerformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="response", type="text", nullable=true)
+     */
+    private $response;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="responseformat", type="boolean", nullable=false)
+     */
+    private $responseformat = '0';
+
+
+}

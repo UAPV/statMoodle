@@ -1,0 +1,151 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlPost
+ *
+ * @ORM\Table(name="mdl_post", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_post_iduse_uix", columns={"id", "userid"})}, indexes={@ORM\Index(name="mdl_post_las_ix", columns={"lastmodified"}), @ORM\Index(name="mdl_post_mod_ix", columns={"module"}), @ORM\Index(name="mdl_post_sub_ix", columns={"subject"}), @ORM\Index(name="mdl_post_use_ix", columns={"usermodified"})})
+ * @ORM\Entity
+ */
+class MdlPost
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="module", type="string", length=20, nullable=false)
+     */
+    private $module = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupid", type="bigint", nullable=false)
+     */
+    private $groupid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="moduleid", type="bigint", nullable=false)
+     */
+    private $moduleid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="coursemoduleid", type="bigint", nullable=false)
+     */
+    private $coursemoduleid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subject", type="string", length=128, nullable=false)
+     */
+    private $subject = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="summary", type="text", nullable=true)
+     */
+    private $summary;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="uniquehash", type="string", length=255, nullable=false)
+     */
+    private $uniquehash = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rating", type="bigint", nullable=false)
+     */
+    private $rating = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="format", type="bigint", nullable=false)
+     */
+    private $format = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="summaryformat", type="boolean", nullable=false)
+     */
+    private $summaryformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="attachment", type="string", length=100, nullable=true)
+     */
+    private $attachment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="publishstate", type="string", length=20, nullable=false)
+     */
+    private $publishstate = 'draft';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lastmodified", type="bigint", nullable=false)
+     */
+    private $lastmodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created", type="bigint", nullable=false)
+     */
+    private $created = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usermodified", type="bigint", nullable=true)
+     */
+    private $usermodified;
+
+
+}

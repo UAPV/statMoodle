@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetLog
+ *
+ * @ORM\Table(name="mdl_mnet_log", indexes={@ORM\Index(name="mdl_mnetlog_hosusecou_ix", columns={"hostid", "userid", "course"})})
+ * @ORM\Entity
+ */
+class MdlMnetLog
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hostid", type="bigint", nullable=false)
+     */
+    private $hostid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="remoteid", type="bigint", nullable=false)
+     */
+    private $remoteid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="time", type="bigint", nullable=false)
+     */
+    private $time = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ip", type="string", length=45, nullable=false)
+     */
+    private $ip = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coursename", type="string", length=40, nullable=false)
+     */
+    private $coursename = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="module", type="string", length=20, nullable=false)
+     */
+    private $module = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cmid", type="bigint", nullable=false)
+     */
+    private $cmid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=40, nullable=false)
+     */
+    private $action = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=100, nullable=false)
+     */
+    private $url = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="string", length=255, nullable=false)
+     */
+    private $info = '';
+
+
+}

@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopSubmissionsOld
+ *
+ * @ORM\Table(name="mdl_workshop_submissions_old", indexes={@ORM\Index(name="mdl_worksubmold_use_ix", columns={"userid"}), @ORM\Index(name="mdl_worksubmold_mai_ix", columns={"mailed"}), @ORM\Index(name="mdl_worksubmold_wor_ix", columns={"workshopid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopSubmissionsOld
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=100, nullable=false)
+     */
+    private $title = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mailed", type="boolean", nullable=false)
+     */
+    private $mailed = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gradinggrade", type="smallint", nullable=false)
+     */
+    private $gradinggrade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="finalgrade", type="smallint", nullable=false)
+     */
+    private $finalgrade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="late", type="smallint", nullable=false)
+     */
+    private $late = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nassessments", type="bigint", nullable=false)
+     */
+    private $nassessments = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newplugin", type="string", length=28, nullable=true)
+     */
+    private $newplugin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="newid", type="bigint", nullable=true)
+     */
+    private $newid;
+
+
+}

@@ -1,0 +1,172 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielReferentiel
+ *
+ * @ORM\Table(name="mdl_referentiel_referentiel")
+ * @ORM\Entity
+ */
+class MdlReferentielReferentiel
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=80, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_referentiel", type="string", length=20, nullable=false)
+     */
+    private $codeReferentiel = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail_auteur_referentiel", type="string", length=255, nullable=false)
+     */
+    private $mailAuteurReferentiel = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cle_referentiel", type="string", length=255, nullable=false)
+     */
+    private $cleReferentiel = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pass_referentiel", type="string", length=255, nullable=false)
+     */
+    private $passReferentiel = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_referentiel", type="text", nullable=false)
+     */
+    private $descriptionReferentiel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url_referentiel", type="string", length=255, nullable=false)
+     */
+    private $urlReferentiel = '';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="seuil_certificat", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $seuilCertificat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="minima_certificat", type="bigint", nullable=false)
+     */
+    private $minimaCertificat = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="nb_domaines", type="boolean", nullable=false)
+     */
+    private $nbDomaines = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liste_codes_competence", type="text", nullable=false)
+     */
+    private $listeCodesCompetence;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liste_empreintes_competence", type="text", nullable=false)
+     */
+    private $listeEmpreintesCompetence;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liste_poids_competence", type="text", nullable=false)
+     */
+    private $listePoidsCompetence;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="local", type="bigint", nullable=false)
+     */
+    private $local = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo_referentiel", type="string", length=255, nullable=false)
+     */
+    private $logoReferentiel = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="config", type="string", length=255, nullable=false)
+     */
+    private $config = 'scol:0;creref:0;selref:0;impcert:0;graph:0;light:0;';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="config_impression", type="string", length=255, nullable=false)
+     */
+    private $configImpression = 'refcert:1;instcert:0;numetu:1;nometu:1;etabetu:0;ddnetu:0;lieuetu:0;adretu:0;detail:1;pourcent:0;compdec:0;compval:1;nomreferent:0;jurycert:1;comcert:0;';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label_domaine", type="string", length=80, nullable=true)
+     */
+    private $labelDomaine = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label_competence", type="string", length=80, nullable=true)
+     */
+    private $labelCompetence = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label_item", type="string", length=80, nullable=true)
+     */
+    private $labelItem = '';
+
+
+}

@@ -1,0 +1,130 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBackupControllers
+ *
+ * @ORM\Table(name="mdl_backup_controllers", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_backcont_bac_uix", columns={"backupid"})}, indexes={@ORM\Index(name="mdl_backcont_typite_ix", columns={"type", "itemid"}), @ORM\Index(name="mdl_backcont_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlBackupControllers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="backupid", type="string", length=32, nullable=false)
+     */
+    private $backupid = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="operation", type="string", length=20, nullable=false)
+     */
+    private $operation = 'backup';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=10, nullable=false)
+     */
+    private $type = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="format", type="string", length=20, nullable=false)
+     */
+    private $format = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="interactive", type="smallint", nullable=false)
+     */
+    private $interactive;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="purpose", type="smallint", nullable=false)
+     */
+    private $purpose;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="smallint", nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="execution", type="smallint", nullable=false)
+     */
+    private $execution;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="executiontime", type="bigint", nullable=false)
+     */
+    private $executiontime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="checksum", type="string", length=32, nullable=false)
+     */
+    private $checksum = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="controller", type="text", nullable=false)
+     */
+    private $controller;
+
+
+}

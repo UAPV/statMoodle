@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetserviceEnrolEnrolments
+ *
+ * @ORM\Table(name="mdl_mnetservice_enrol_enrolments", indexes={@ORM\Index(name="mdl_mnetenroenro_use_ix", columns={"userid"}), @ORM\Index(name="mdl_mnetenroenro_hos_ix", columns={"hostid"})})
+ * @ORM\Entity
+ */
+class MdlMnetserviceEnrolEnrolments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hostid", type="bigint", nullable=false)
+     */
+    private $hostid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="remotecourseid", type="bigint", nullable=false)
+     */
+    private $remotecourseid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rolename", type="string", length=255, nullable=false)
+     */
+    private $rolename = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enroltime", type="bigint", nullable=false)
+     */
+    private $enroltime = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enroltype", type="string", length=20, nullable=false)
+     */
+    private $enroltype = '';
+
+
+}

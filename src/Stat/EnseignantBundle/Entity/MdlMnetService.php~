@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetService
+ *
+ * @ORM\Table(name="mdl_mnet_service")
+ * @ORM\Entity
+ */
+class MdlMnetService
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=40, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=40, nullable=false)
+     */
+    private $description = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apiversion", type="string", length=10, nullable=false)
+     */
+    private $apiversion = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="offer", type="boolean", nullable=false)
+     */
+    private $offer = '0';
+
+
+}
