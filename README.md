@@ -3,7 +3,7 @@ statMoodle
 
 * Récupérer des sources
 
-git clone https://github.com/UAPV/statMoodle
+git clone git@github.com:UAPV/statMoodle.git
 cd statMoodle
 
 
