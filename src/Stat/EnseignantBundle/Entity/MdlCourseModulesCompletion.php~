@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseModulesCompletion
+ *
+ * @ORM\Table(name="mdl_course_modules_completion", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_courmoducomp_usecou_uix", columns={"userid", "coursemoduleid"})}, indexes={@ORM\Index(name="mdl_courmoducomp_cou_ix", columns={"coursemoduleid"})})
+ * @ORM\Entity
+ */
+class MdlCourseModulesCompletion
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="coursemoduleid", type="bigint", nullable=false)
+     */
+    private $coursemoduleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completionstate", type="boolean", nullable=false)
+     */
+    private $completionstate;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="viewed", type="boolean", nullable=true)
+     */
+    private $viewed;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

@@ -1,0 +1,172 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseModules
+ *
+ * @ORM\Table(name="mdl_course_modules", indexes={@ORM\Index(name="mdl_courmodu_vis_ix", columns={"visible"}), @ORM\Index(name="mdl_courmodu_cou_ix", columns={"course"}), @ORM\Index(name="mdl_courmodu_mod_ix", columns={"module"}), @ORM\Index(name="mdl_courmodu_ins_ix", columns={"instance"}), @ORM\Index(name="mdl_courmodu_idncou_ix", columns={"idnumber", "course"}), @ORM\Index(name="mdl_courmodu_gro_ix", columns={"groupingid"})})
+ * @ORM\Entity
+ */
+class MdlCourseModules
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="module", type="bigint", nullable=false)
+     */
+    private $module = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instance", type="bigint", nullable=false)
+     */
+    private $instance = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="section", type="bigint", nullable=false)
+     */
+    private $section = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idnumber", type="string", length=100, nullable=true)
+     */
+    private $idnumber;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="added", type="bigint", nullable=false)
+     */
+    private $added = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="score", type="smallint", nullable=false)
+     */
+    private $score = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indent", type="integer", nullable=false)
+     */
+    private $indent = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visibleold", type="boolean", nullable=false)
+     */
+    private $visibleold = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupmode", type="smallint", nullable=false)
+     */
+    private $groupmode = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupingid", type="bigint", nullable=false)
+     */
+    private $groupingid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupmembersonly", type="smallint", nullable=false)
+     */
+    private $groupmembersonly = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completion", type="boolean", nullable=false)
+     */
+    private $completion = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completiongradeitemnumber", type="bigint", nullable=true)
+     */
+    private $completiongradeitemnumber;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completionview", type="boolean", nullable=false)
+     */
+    private $completionview = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completionexpected", type="bigint", nullable=false)
+     */
+    private $completionexpected = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="availablefrom", type="bigint", nullable=false)
+     */
+    private $availablefrom = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="availableuntil", type="bigint", nullable=false)
+     */
+    private $availableuntil = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showavailability", type="boolean", nullable=false)
+     */
+    private $showavailability = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showdescription", type="boolean", nullable=false)
+     */
+    private $showdescription = '0';
+
+
+}

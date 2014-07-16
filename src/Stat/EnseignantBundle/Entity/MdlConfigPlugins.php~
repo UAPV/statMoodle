@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlConfigPlugins
+ *
+ * @ORM\Table(name="mdl_config_plugins", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_confplug_plunam_uix", columns={"plugin", "name"})})
+ * @ORM\Entity
+ */
+class MdlConfigPlugins
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plugin", type="string", length=100, nullable=false)
+     */
+    private $plugin = 'core';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="text", nullable=false)
+     */
+    private $value;
+
+
+}

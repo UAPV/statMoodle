@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlFeedbackTracking
+ *
+ * @ORM\Table(name="mdl_feedback_tracking", indexes={@ORM\Index(name="mdl_feedtrac_use_ix", columns={"userid"}), @ORM\Index(name="mdl_feedtrac_fee_ix", columns={"feedback"}), @ORM\Index(name="mdl_feedtrac_com_ix", columns={"completed"})})
+ * @ORM\Entity
+ */
+class MdlFeedbackTracking
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedback", type="bigint", nullable=false)
+     */
+    private $feedback = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completed", type="bigint", nullable=false)
+     */
+    private $completed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tmp_completed", type="bigint", nullable=false)
+     */
+    private $tmpCompleted = '0';
+
+
+}

@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionAnswers
+ *
+ * @ORM\Table(name="mdl_question_answers", indexes={@ORM\Index(name="mdl_quesansw_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionAnswers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answer", type="text", nullable=false)
+     */
+    private $answer;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="answerformat", type="boolean", nullable=false)
+     */
+    private $answerformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fraction", type="decimal", precision=12, scale=7, nullable=false)
+     */
+    private $fraction = '0.0000000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedback", type="text", nullable=false)
+     */
+    private $feedback;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="feedbackformat", type="boolean", nullable=false)
+     */
+    private $feedbackformat = '0';
+
+
+}

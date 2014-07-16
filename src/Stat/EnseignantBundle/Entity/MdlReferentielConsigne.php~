@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielConsigne
+ *
+ * @ORM\Table(name="mdl_referentiel_consigne")
+ * @ORM\Entity
+ */
+class MdlReferentielConsigne
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_consigne", type="string", length=20, nullable=false)
+     */
+    private $typeConsigne = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_consigne", type="text", nullable=false)
+     */
+    private $descriptionConsigne;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url_consigne", type="string", length=255, nullable=false)
+     */
+    private $urlConsigne = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_task", type="bigint", nullable=false)
+     */
+    private $refTask;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cible_consigne", type="smallint", nullable=false)
+     */
+    private $cibleConsigne = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etiquette_consigne", type="string", length=255, nullable=false)
+     */
+    private $etiquetteConsigne = '';
+
+
+}

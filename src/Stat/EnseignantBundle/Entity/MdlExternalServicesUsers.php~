@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlExternalServicesUsers
+ *
+ * @ORM\Table(name="mdl_external_services_users", indexes={@ORM\Index(name="mdl_exteservuser_ext_ix", columns={"externalserviceid"}), @ORM\Index(name="mdl_exteservuser_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlExternalServicesUsers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="externalserviceid", type="bigint", nullable=false)
+     */
+    private $externalserviceid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="iprestriction", type="string", length=255, nullable=true)
+     */
+    private $iprestriction;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validuntil", type="bigint", nullable=true)
+     */
+    private $validuntil;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=true)
+     */
+    private $timecreated;
+
+
+}

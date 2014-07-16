@@ -1,0 +1,249 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlData
+ *
+ * @ORM\Table(name="mdl_data", indexes={@ORM\Index(name="mdl_data_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlData
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="comments", type="smallint", nullable=false)
+     */
+    private $comments = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeavailablefrom", type="bigint", nullable=false)
+     */
+    private $timeavailablefrom = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeavailableto", type="bigint", nullable=false)
+     */
+    private $timeavailableto = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeviewfrom", type="bigint", nullable=false)
+     */
+    private $timeviewfrom = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeviewto", type="bigint", nullable=false)
+     */
+    private $timeviewto = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="requiredentries", type="integer", nullable=false)
+     */
+    private $requiredentries = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="requiredentriestoview", type="integer", nullable=false)
+     */
+    private $requiredentriestoview = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxentries", type="integer", nullable=false)
+     */
+    private $maxentries = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rssarticles", type="smallint", nullable=false)
+     */
+    private $rssarticles = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="singletemplate", type="text", nullable=true)
+     */
+    private $singletemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="listtemplate", type="text", nullable=true)
+     */
+    private $listtemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="listtemplateheader", type="text", nullable=true)
+     */
+    private $listtemplateheader;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="listtemplatefooter", type="text", nullable=true)
+     */
+    private $listtemplatefooter;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="addtemplate", type="text", nullable=true)
+     */
+    private $addtemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rsstemplate", type="text", nullable=true)
+     */
+    private $rsstemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rsstitletemplate", type="text", nullable=true)
+     */
+    private $rsstitletemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="csstemplate", type="text", nullable=true)
+     */
+    private $csstemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="jstemplate", type="text", nullable=true)
+     */
+    private $jstemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="asearchtemplate", type="text", nullable=true)
+     */
+    private $asearchtemplate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="approval", type="smallint", nullable=false)
+     */
+    private $approval = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scale", type="bigint", nullable=false)
+     */
+    private $scale = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessed", type="bigint", nullable=false)
+     */
+    private $assessed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assesstimestart", type="bigint", nullable=false)
+     */
+    private $assesstimestart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assesstimefinish", type="bigint", nullable=false)
+     */
+    private $assesstimefinish = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="defaultsort", type="bigint", nullable=false)
+     */
+    private $defaultsort = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="defaultsortdir", type="smallint", nullable=false)
+     */
+    private $defaultsortdir = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="editany", type="smallint", nullable=false)
+     */
+    private $editany = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="notification", type="bigint", nullable=false)
+     */
+    private $notification = '0';
+
+
+}

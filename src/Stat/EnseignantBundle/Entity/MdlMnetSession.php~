@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetSession
+ *
+ * @ORM\Table(name="mdl_mnet_session", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_mnetsess_tok_uix", columns={"token"})})
+ * @ORM\Entity
+ */
+class MdlMnetSession
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=100, nullable=false)
+     */
+    private $username = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=40, nullable=false)
+     */
+    private $token = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mnethostid", type="bigint", nullable=false)
+     */
+    private $mnethostid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="useragent", type="string", length=40, nullable=false)
+     */
+    private $useragent = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="confirm_timeout", type="bigint", nullable=false)
+     */
+    private $confirmTimeout = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="session_id", type="string", length=40, nullable=false)
+     */
+    private $sessionId = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="expires", type="bigint", nullable=false)
+     */
+    private $expires = '0';
+
+
+}

@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseAllowedModules
+ *
+ * @ORM\Table(name="mdl_course_allowed_modules", indexes={@ORM\Index(name="mdl_courallomodu_cou_ix", columns={"course"}), @ORM\Index(name="mdl_courallomodu_mod_ix", columns={"module"})})
+ * @ORM\Entity
+ */
+class MdlCourseAllowedModules
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="module", type="bigint", nullable=false)
+     */
+    private $module = '0';
+
+
+}

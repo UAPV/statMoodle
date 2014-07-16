@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGroupingsGroups
+ *
+ * @ORM\Table(name="mdl_groupings_groups", indexes={@ORM\Index(name="mdl_grougrou_gro_ix", columns={"groupingid"}), @ORM\Index(name="mdl_grougrou_gro2_ix", columns={"groupid"})})
+ * @ORM\Entity
+ */
+class MdlGroupingsGroups
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupingid", type="bigint", nullable=false)
+     */
+    private $groupingid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupid", type="bigint", nullable=false)
+     */
+    private $groupid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeadded", type="bigint", nullable=false)
+     */
+    private $timeadded = '0';
+
+
+}

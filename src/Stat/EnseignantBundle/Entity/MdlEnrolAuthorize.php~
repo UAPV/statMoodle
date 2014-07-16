@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlEnrolAuthorize
+ *
+ * @ORM\Table(name="mdl_enrol_authorize", indexes={@ORM\Index(name="mdl_enroauth_cou_ix", columns={"courseid"}), @ORM\Index(name="mdl_enroauth_use_ix", columns={"userid"}), @ORM\Index(name="mdl_enroauth_sta_ix", columns={"status"}), @ORM\Index(name="mdl_enroauth_tra_ix", columns={"transid"})})
+ * @ORM\Entity
+ */
+class MdlEnrolAuthorize
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="paymentmethod", type="string", length=6, nullable=false)
+     */
+    private $paymentmethod = 'cc';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="refundinfo", type="smallint", nullable=false)
+     */
+    private $refundinfo = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ccname", type="string", length=255, nullable=false)
+     */
+    private $ccname = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instanceid", type="bigint", nullable=false)
+     */
+    private $instanceid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="transid", type="bigint", nullable=false)
+     */
+    private $transid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="bigint", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="settletime", type="bigint", nullable=false)
+     */
+    private $settletime = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="amount", type="string", length=10, nullable=false)
+     */
+    private $amount = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency", type="string", length=3, nullable=false)
+     */
+    private $currency = 'USD';
+
+
+}

@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLessonAttempts
+ *
+ * @ORM\Table(name="mdl_lesson_attempts", indexes={@ORM\Index(name="mdl_lessatte_use_ix", columns={"userid"}), @ORM\Index(name="mdl_lessatte_les_ix", columns={"lessonid"}), @ORM\Index(name="mdl_lessatte_pag_ix", columns={"pageid"}), @ORM\Index(name="mdl_lessatte_ans_ix", columns={"answerid"})})
+ * @ORM\Entity
+ */
+class MdlLessonAttempts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lessonid", type="bigint", nullable=false)
+     */
+    private $lessonid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pageid", type="bigint", nullable=false)
+     */
+    private $pageid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="answerid", type="bigint", nullable=false)
+     */
+    private $answerid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="retry", type="smallint", nullable=false)
+     */
+    private $retry = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="correct", type="bigint", nullable=false)
+     */
+    private $correct = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="useranswer", type="text", nullable=true)
+     */
+    private $useranswer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeseen", type="bigint", nullable=false)
+     */
+    private $timeseen = '0';
+
+
+}

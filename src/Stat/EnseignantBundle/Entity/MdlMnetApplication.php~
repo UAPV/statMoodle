@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetApplication
+ *
+ * @ORM\Table(name="mdl_mnet_application")
+ * @ORM\Entity
+ */
+class MdlMnetApplication
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="display_name", type="string", length=50, nullable=false)
+     */
+    private $displayName = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="xmlrpc_server_url", type="string", length=255, nullable=false)
+     */
+    private $xmlrpcServerUrl = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sso_land_url", type="string", length=255, nullable=false)
+     */
+    private $ssoLandUrl = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sso_jump_url", type="string", length=255, nullable=false)
+     */
+    private $ssoJumpUrl = '';
+
+
+}

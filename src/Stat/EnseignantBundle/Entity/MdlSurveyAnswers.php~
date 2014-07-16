@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlSurveyAnswers
+ *
+ * @ORM\Table(name="mdl_survey_answers", indexes={@ORM\Index(name="mdl_survansw_use_ix", columns={"userid"}), @ORM\Index(name="mdl_survansw_sur_ix", columns={"survey"}), @ORM\Index(name="mdl_survansw_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlSurveyAnswers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="survey", type="bigint", nullable=false)
+     */
+    private $survey = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="time", type="bigint", nullable=false)
+     */
+    private $time = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answer1", type="text", nullable=false)
+     */
+    private $answer1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answer2", type="text", nullable=false)
+     */
+    private $answer2;
+
+
+}

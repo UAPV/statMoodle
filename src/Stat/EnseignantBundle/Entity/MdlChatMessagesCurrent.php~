@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlChatMessagesCurrent
+ *
+ * @ORM\Table(name="mdl_chat_messages_current", indexes={@ORM\Index(name="mdl_chatmesscurr_use_ix", columns={"userid"}), @ORM\Index(name="mdl_chatmesscurr_gro_ix", columns={"groupid"}), @ORM\Index(name="mdl_chatmesscurr_timcha_ix", columns={"timestamp", "chatid"}), @ORM\Index(name="mdl_chatmesscurr_cha_ix", columns={"chatid"})})
+ * @ORM\Entity
+ */
+class MdlChatMessagesCurrent
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="chatid", type="bigint", nullable=false)
+     */
+    private $chatid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupid", type="bigint", nullable=false)
+     */
+    private $groupid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="system", type="boolean", nullable=false)
+     */
+    private $system = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="text", nullable=false)
+     */
+    private $message;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timestamp", type="bigint", nullable=false)
+     */
+    private $timestamp = '0';
+
+
+}

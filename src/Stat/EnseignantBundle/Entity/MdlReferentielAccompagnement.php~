@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielAccompagnement
+ *
+ * @ORM\Table(name="mdl_referentiel_accompagnement")
+ * @ORM\Entity
+ */
+class MdlReferentielAccompagnement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="accompagnement", type="string", length=3, nullable=false)
+     */
+    private $accompagnement = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_instance", type="bigint", nullable=false)
+     */
+    private $refInstance = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="teacherid", type="bigint", nullable=false)
+     */
+    private $teacherid;
+
+
+}

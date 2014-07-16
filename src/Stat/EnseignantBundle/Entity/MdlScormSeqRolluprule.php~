@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScormSeqRolluprule
+ *
+ * @ORM\Table(name="mdl_scorm_seq_rolluprule", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_scorseqroll_scoid_uix", columns={"scoid", "id"})}, indexes={@ORM\Index(name="mdl_scorseqroll_sco_ix", columns={"scoid"})})
+ * @ORM\Entity
+ */
+class MdlScormSeqRolluprule
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scoid", type="bigint", nullable=false)
+     */
+    private $scoid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="childactivityset", type="string", length=15, nullable=false)
+     */
+    private $childactivityset = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="minimumcount", type="bigint", nullable=false)
+     */
+    private $minimumcount = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="minimumpercent", type="float", precision=11, scale=4, nullable=false)
+     */
+    private $minimumpercent = '0.0000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conditioncombination", type="string", length=3, nullable=false)
+     */
+    private $conditioncombination = 'all';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=15, nullable=false)
+     */
+    private $action = '';
+
+
+}

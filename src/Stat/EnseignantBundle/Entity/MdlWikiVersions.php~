@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWikiVersions
+ *
+ * @ORM\Table(name="mdl_wiki_versions", indexes={@ORM\Index(name="mdl_wikivers_pag_ix", columns={"pageid"})})
+ * @ORM\Entity
+ */
+class MdlWikiVersions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pageid", type="bigint", nullable=false)
+     */
+    private $pageid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contentformat", type="string", length=20, nullable=false)
+     */
+    private $contentformat = 'creole';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="version", type="integer", nullable=false)
+     */
+    private $version = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+
+}

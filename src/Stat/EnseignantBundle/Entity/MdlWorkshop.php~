@@ -1,0 +1,207 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshop
+ *
+ * @ORM\Table(name="mdl_workshop", indexes={@ORM\Index(name="mdl_work_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlWorkshop
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=true)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instructauthors", type="text", nullable=true)
+     */
+    private $instructauthors;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instructauthorsformat", type="smallint", nullable=false)
+     */
+    private $instructauthorsformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instructreviewers", type="text", nullable=true)
+     */
+    private $instructreviewers;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instructreviewersformat", type="smallint", nullable=false)
+     */
+    private $instructreviewersformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="phase", type="smallint", nullable=true)
+     */
+    private $phase = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="useexamples", type="boolean", nullable=true)
+     */
+    private $useexamples = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="usepeerassessment", type="boolean", nullable=true)
+     */
+    private $usepeerassessment = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="useselfassessment", type="boolean", nullable=true)
+     */
+    private $useselfassessment = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $grade = '80.00000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradinggrade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $gradinggrade = '20.00000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="strategy", type="string", length=30, nullable=false)
+     */
+    private $strategy = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="evaluation", type="string", length=30, nullable=false)
+     */
+    private $evaluation = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gradedecimals", type="smallint", nullable=true)
+     */
+    private $gradedecimals = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nattachments", type="smallint", nullable=true)
+     */
+    private $nattachments = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="latesubmissions", type="boolean", nullable=true)
+     */
+    private $latesubmissions = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxbytes", type="bigint", nullable=true)
+     */
+    private $maxbytes = '100000';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="examplesmode", type="smallint", nullable=true)
+     */
+    private $examplesmode = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="submissionstart", type="bigint", nullable=true)
+     */
+    private $submissionstart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="submissionend", type="bigint", nullable=true)
+     */
+    private $submissionend = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessmentstart", type="bigint", nullable=true)
+     */
+    private $assessmentstart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessmentend", type="bigint", nullable=true)
+     */
+    private $assessmentend = '0';
+
+
+}

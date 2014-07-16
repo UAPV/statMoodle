@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuizFeedback
+ *
+ * @ORM\Table(name="mdl_quiz_feedback", indexes={@ORM\Index(name="mdl_quizfeed_qui_ix", columns={"quizid"})})
+ * @ORM\Entity
+ */
+class MdlQuizFeedback
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quizid", type="bigint", nullable=false)
+     */
+    private $quizid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedbacktext", type="text", nullable=false)
+     */
+    private $feedbacktext;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="feedbacktextformat", type="boolean", nullable=false)
+     */
+    private $feedbacktextformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mingrade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $mingrade = '0.00000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="maxgrade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $maxgrade = '0.00000';
+
+
+}

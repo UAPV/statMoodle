@@ -1,0 +1,116 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseCategories
+ *
+ * @ORM\Table(name="mdl_course_categories", indexes={@ORM\Index(name="mdl_courcate_par_ix", columns={"parent"})})
+ * @ORM\Entity
+ */
+class MdlCourseCategories
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idnumber", type="string", length=100, nullable=true)
+     */
+    private $idnumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="descriptionformat", type="boolean", nullable=false)
+     */
+    private $descriptionformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="parent", type="bigint", nullable=false)
+     */
+    private $parent = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="coursecount", type="bigint", nullable=false)
+     */
+    private $coursecount = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visibleold", type="boolean", nullable=false)
+     */
+    private $visibleold = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="depth", type="bigint", nullable=false)
+     */
+    private $depth = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=false)
+     */
+    private $path = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="theme", type="string", length=50, nullable=true)
+     */
+    private $theme;
+
+
+}

@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlPortfolioTempdata
+ *
+ * @ORM\Table(name="mdl_portfolio_tempdata", indexes={@ORM\Index(name="mdl_porttemp_use_ix", columns={"userid"}), @ORM\Index(name="mdl_porttemp_ins_ix", columns={"instance"})})
+ * @ORM\Entity
+ */
+class MdlPortfolioTempdata
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="text", nullable=true)
+     */
+    private $data;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="expirytime", type="bigint", nullable=false)
+     */
+    private $expirytime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instance", type="bigint", nullable=true)
+     */
+    private $instance = '0';
+
+
+}

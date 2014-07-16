@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlDataContent
+ *
+ * @ORM\Table(name="mdl_data_content", indexes={@ORM\Index(name="mdl_datacont_rec_ix", columns={"recordid"}), @ORM\Index(name="mdl_datacont_fie_ix", columns={"fieldid"})})
+ * @ORM\Entity
+ */
+class MdlDataContent
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fieldid", type="bigint", nullable=false)
+     */
+    private $fieldid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="recordid", type="bigint", nullable=false)
+     */
+    private $recordid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content1", type="text", nullable=true)
+     */
+    private $content1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content2", type="text", nullable=true)
+     */
+    private $content2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content3", type="text", nullable=true)
+     */
+    private $content3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content4", type="text", nullable=true)
+     */
+    private $content4;
+
+
+}

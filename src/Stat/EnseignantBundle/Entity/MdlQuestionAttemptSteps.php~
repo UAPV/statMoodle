@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionAttemptSteps
+ *
+ * @ORM\Table(name="mdl_question_attempt_steps", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_quesattestep_queseq_uix", columns={"questionattemptid", "sequencenumber"})}, indexes={@ORM\Index(name="mdl_quesattestep_que_ix", columns={"questionattemptid"}), @ORM\Index(name="mdl_quesattestep_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlQuestionAttemptSteps
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="questionattemptid", type="bigint", nullable=false)
+     */
+    private $questionattemptid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sequencenumber", type="bigint", nullable=false)
+     */
+    private $sequencenumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=13, nullable=false)
+     */
+    private $state = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fraction", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $fraction;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=true)
+     */
+    private $userid;
+
+
+}

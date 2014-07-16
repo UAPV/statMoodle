@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionMatchSub
+ *
+ * @ORM\Table(name="mdl_question_match_sub", indexes={@ORM\Index(name="mdl_quesmatcsub_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionMatchSub
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="code", type="bigint", nullable=false)
+     */
+    private $code = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="questiontext", type="text", nullable=false)
+     */
+    private $questiontext;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="questiontextformat", type="boolean", nullable=false)
+     */
+    private $questiontextformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answertext", type="string", length=255, nullable=false)
+     */
+    private $answertext = '';
+
+
+}

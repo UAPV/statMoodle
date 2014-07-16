@@ -1,0 +1,102 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuizAttempts
+ *
+ * @ORM\Table(name="mdl_quiz_attempts", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_quizatte_uni_uix", columns={"uniqueid"})}, indexes={@ORM\Index(name="mdl_quizatte_use_ix", columns={"userid"}), @ORM\Index(name="mdl_quizatte_qui_ix", columns={"quiz"})})
+ * @ORM\Entity
+ */
+class MdlQuizAttempts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="uniqueid", type="bigint", nullable=false)
+     */
+    private $uniqueid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quiz", type="bigint", nullable=false)
+     */
+    private $quiz = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attempt", type="integer", nullable=false)
+     */
+    private $attempt = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sumgrades", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $sumgrades;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timestart", type="bigint", nullable=false)
+     */
+    private $timestart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timefinish", type="bigint", nullable=false)
+     */
+    private $timefinish = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="layout", type="text", nullable=false)
+     */
+    private $layout;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="preview", type="smallint", nullable=false)
+     */
+    private $preview = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="needsupgradetonewqe", type="smallint", nullable=false)
+     */
+    private $needsupgradetonewqe = '0';
+
+
+}

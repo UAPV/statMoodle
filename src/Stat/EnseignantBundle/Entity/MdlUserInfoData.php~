@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlUserInfoData
+ *
+ * @ORM\Table(name="mdl_user_info_data", indexes={@ORM\Index(name="mdl_userinfodata_usefie_ix", columns={"userid", "fieldid"})})
+ * @ORM\Entity
+ */
+class MdlUserInfoData
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fieldid", type="bigint", nullable=false)
+     */
+    private $fieldid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="text", nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="dataformat", type="boolean", nullable=false)
+     */
+    private $dataformat = '0';
+
+
+}

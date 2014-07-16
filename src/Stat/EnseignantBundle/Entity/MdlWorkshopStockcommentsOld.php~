@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopStockcommentsOld
+ *
+ * @ORM\Table(name="mdl_workshop_stockcomments_old", indexes={@ORM\Index(name="mdl_workstocold_wor_ix", columns={"workshopid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopStockcommentsOld
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="elementno", type="bigint", nullable=false)
+     */
+    private $elementno = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comments", type="text", nullable=false)
+     */
+    private $comments;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newplugin", type="string", length=28, nullable=true)
+     */
+    private $newplugin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="newid", type="bigint", nullable=true)
+     */
+    private $newid;
+
+
+}

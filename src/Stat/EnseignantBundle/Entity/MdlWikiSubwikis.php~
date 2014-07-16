@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWikiSubwikis
+ *
+ * @ORM\Table(name="mdl_wiki_subwikis", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_wikisubw_wikgrouse_uix", columns={"wikiid", "groupid", "userid"})}, indexes={@ORM\Index(name="mdl_wikisubw_wik_ix", columns={"wikiid"})})
+ * @ORM\Entity
+ */
+class MdlWikiSubwikis
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wikiid", type="bigint", nullable=false)
+     */
+    private $wikiid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupid", type="bigint", nullable=false)
+     */
+    private $groupid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+
+}

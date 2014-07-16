@@ -1,0 +1,249 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourse
+ *
+ * @ORM\Table(name="mdl_course", indexes={@ORM\Index(name="mdl_cour_cat_ix", columns={"category"}), @ORM\Index(name="mdl_cour_idn_ix", columns={"idnumber"}), @ORM\Index(name="mdl_cour_sho_ix", columns={"shortname"})})
+ * @ORM\Entity
+ */
+class MdlCourse
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="category", type="bigint", nullable=false)
+     */
+    private $category = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullname", type="string", length=254, nullable=false)
+     */
+    private $fullname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortname", type="string", length=255, nullable=false)
+     */
+    private $shortname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idnumber", type="string", length=100, nullable=false)
+     */
+    private $idnumber = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="summary", type="text", nullable=true)
+     */
+    private $summary;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="summaryformat", type="boolean", nullable=false)
+     */
+    private $summaryformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="format", type="string", length=10, nullable=false)
+     */
+    private $format = 'topics';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showgrades", type="boolean", nullable=false)
+     */
+    private $showgrades = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="modinfo", type="text", nullable=true)
+     */
+    private $modinfo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="newsitems", type="integer", nullable=false)
+     */
+    private $newsitems = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="startdate", type="bigint", nullable=false)
+     */
+    private $startdate = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numsections", type="integer", nullable=false)
+     */
+    private $numsections = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="marker", type="bigint", nullable=false)
+     */
+    private $marker = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxbytes", type="bigint", nullable=false)
+     */
+    private $maxbytes = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="legacyfiles", type="smallint", nullable=false)
+     */
+    private $legacyfiles = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="showreports", type="smallint", nullable=false)
+     */
+    private $showreports = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visibleold", type="boolean", nullable=false)
+     */
+    private $visibleold = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hiddensections", type="boolean", nullable=false)
+     */
+    private $hiddensections = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupmode", type="smallint", nullable=false)
+     */
+    private $groupmode = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="groupmodeforce", type="smallint", nullable=false)
+     */
+    private $groupmodeforce = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="defaultgroupingid", type="bigint", nullable=false)
+     */
+    private $defaultgroupingid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lang", type="string", length=30, nullable=false)
+     */
+    private $lang = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="theme", type="string", length=50, nullable=false)
+     */
+    private $theme = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="requested", type="boolean", nullable=false)
+     */
+    private $requested = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="restrictmodules", type="boolean", nullable=false)
+     */
+    private $restrictmodules = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enablecompletion", type="boolean", nullable=false)
+     */
+    private $enablecompletion = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completionstartonenrol", type="boolean", nullable=false)
+     */
+    private $completionstartonenrol = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completionnotify", type="boolean", nullable=false)
+     */
+    private $completionnotify = '0';
+
+
+}

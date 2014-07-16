@@ -1,0 +1,165 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlEphorusDocument
+ *
+ * @ORM\Table(name="mdl_ephorus_document", indexes={@ORM\Index(name="mdl_ephodocu_gui_ix", columns={"guid"}), @ORM\Index(name="mdl_ephodocu_fil_ix", columns={"fileid"})})
+ * @ORM\Entity
+ */
+class MdlEphorusDocument
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="guid", type="string", length=36, nullable=false)
+     */
+    private $guid = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fileid", type="bigint", nullable=false)
+     */
+    private $fileid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filename", type="string", length=255, nullable=false)
+     */
+    private $filename = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenthash", type="string", length=55, nullable=false)
+     */
+    private $contenthash = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="student_name", type="string", length=60, nullable=false)
+     */
+    private $studentName = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="student_number", type="string", length=25, nullable=false)
+     */
+    private $studentNumber = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subject", type="string", length=255, nullable=true)
+     */
+    private $subject;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text", nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date", type="string", length=25, nullable=true)
+     */
+    private $date = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="percentage", type="bigint", nullable=true)
+     */
+    private $percentage = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="duplicate_original_guid", type="string", length=36, nullable=true)
+     */
+    private $duplicateOriginalGuid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="duplicate_original_studentname", type="string", length=60, nullable=true)
+     */
+    private $duplicateOriginalStudentname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="duplicate_original_studentnumber", type="string", length=25, nullable=true)
+     */
+    private $duplicateOriginalStudentnumber;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status_description", type="string", length=255, nullable=true)
+     */
+    private $statusDescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profile", type="string", length=255, nullable=true)
+     */
+    private $profile = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="summary", type="text", nullable=true)
+     */
+    private $summary;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="processtype", type="boolean", nullable=false)
+     */
+    private $processtype = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="submission", type="bigint", nullable=true)
+     */
+    private $submission;
+
+
+}

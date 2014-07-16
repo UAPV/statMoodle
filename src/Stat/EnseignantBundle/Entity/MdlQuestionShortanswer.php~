@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionShortanswer
+ *
+ * @ORM\Table(name="mdl_question_shortanswer", indexes={@ORM\Index(name="mdl_quesshor_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionShortanswer
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answers", type="string", length=255, nullable=false)
+     */
+    private $answers = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="usecase", type="boolean", nullable=false)
+     */
+    private $usecase = '0';
+
+
+}

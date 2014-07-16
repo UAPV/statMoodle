@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlChat
+ *
+ * @ORM\Table(name="mdl_chat", indexes={@ORM\Index(name="mdl_chat_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlChat
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="keepdays", type="bigint", nullable=false)
+     */
+    private $keepdays = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="studentlogs", type="smallint", nullable=false)
+     */
+    private $studentlogs = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="chattime", type="bigint", nullable=false)
+     */
+    private $chattime = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="schedule", type="smallint", nullable=false)
+     */
+    private $schedule = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

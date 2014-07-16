@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlRepository
+ *
+ * @ORM\Table(name="mdl_repository")
+ * @ORM\Entity
+ */
+class MdlRepository
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255, nullable=false)
+     */
+    private $type = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=true)
+     */
+    private $visible = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+
+}

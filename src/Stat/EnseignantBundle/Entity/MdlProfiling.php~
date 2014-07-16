@@ -1,0 +1,95 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlProfiling
+ *
+ * @ORM\Table(name="mdl_profiling", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_prof_run_uix", columns={"runid"})}, indexes={@ORM\Index(name="mdl_prof_urlrun_ix", columns={"url", "runreference"}), @ORM\Index(name="mdl_prof_timrun_ix", columns={"timecreated", "runreference"})})
+ * @ORM\Entity
+ */
+class MdlProfiling
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="runid", type="string", length=32, nullable=false)
+     */
+    private $runid = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=false)
+     */
+    private $url = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="text", nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="totalexecutiontime", type="bigint", nullable=false)
+     */
+    private $totalexecutiontime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="totalcputime", type="bigint", nullable=false)
+     */
+    private $totalcputime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="totalcalls", type="bigint", nullable=false)
+     */
+    private $totalcalls;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="totalmemory", type="bigint", nullable=false)
+     */
+    private $totalmemory;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="runreference", type="boolean", nullable=false)
+     */
+    private $runreference = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="runcomment", type="string", length=255, nullable=false)
+     */
+    private $runcomment = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+
+}

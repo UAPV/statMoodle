@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBlogExternal
+ *
+ * @ORM\Table(name="mdl_blog_external", indexes={@ORM\Index(name="mdl_blogexte_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlBlogExternal
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="text", nullable=false)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtertags", type="string", length=255, nullable=true)
+     */
+    private $filtertags;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="failedlastsync", type="boolean", nullable=false)
+     */
+    private $failedlastsync = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=true)
+     */
+    private $timemodified;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timefetched", type="bigint", nullable=false)
+     */
+    private $timefetched = '0';
+
+
+}

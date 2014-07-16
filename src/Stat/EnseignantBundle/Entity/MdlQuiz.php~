@@ -1,0 +1,270 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuiz
+ *
+ * @ORM\Table(name="mdl_quiz", indexes={@ORM\Index(name="mdl_quiz_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlQuiz
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeopen", type="bigint", nullable=false)
+     */
+    private $timeopen = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeclose", type="bigint", nullable=false)
+     */
+    private $timeclose = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preferredbehaviour", type="string", length=32, nullable=false)
+     */
+    private $preferredbehaviour = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attempts", type="integer", nullable=false)
+     */
+    private $attempts = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attemptonlast", type="smallint", nullable=false)
+     */
+    private $attemptonlast = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="grademethod", type="smallint", nullable=false)
+     */
+    private $grademethod = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="decimalpoints", type="smallint", nullable=false)
+     */
+    private $decimalpoints = '2';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="questiondecimalpoints", type="smallint", nullable=false)
+     */
+    private $questiondecimalpoints = '-1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewattempt", type="integer", nullable=false)
+     */
+    private $reviewattempt = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewcorrectness", type="integer", nullable=false)
+     */
+    private $reviewcorrectness = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewmarks", type="integer", nullable=false)
+     */
+    private $reviewmarks = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewspecificfeedback", type="integer", nullable=false)
+     */
+    private $reviewspecificfeedback = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewgeneralfeedback", type="integer", nullable=false)
+     */
+    private $reviewgeneralfeedback = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewrightanswer", type="integer", nullable=false)
+     */
+    private $reviewrightanswer = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewoverallfeedback", type="integer", nullable=false)
+     */
+    private $reviewoverallfeedback = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="questionsperpage", type="bigint", nullable=false)
+     */
+    private $questionsperpage = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="shufflequestions", type="smallint", nullable=false)
+     */
+    private $shufflequestions = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="shuffleanswers", type="smallint", nullable=false)
+     */
+    private $shuffleanswers = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="questions", type="text", nullable=false)
+     */
+    private $questions;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sumgrades", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $sumgrades = '0.00000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $grade = '0.00000';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timelimit", type="bigint", nullable=false)
+     */
+    private $timelimit = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=false)
+     */
+    private $password = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subnet", type="string", length=255, nullable=false)
+     */
+    private $subnet = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="browsersecurity", type="string", length=32, nullable=false)
+     */
+    private $browsersecurity = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="delay1", type="bigint", nullable=false)
+     */
+    private $delay1 = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="delay2", type="bigint", nullable=false)
+     */
+    private $delay2 = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="showuserpicture", type="smallint", nullable=false)
+     */
+    private $showuserpicture = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="showblocks", type="smallint", nullable=false)
+     */
+    private $showblocks = '0';
+
+
+}

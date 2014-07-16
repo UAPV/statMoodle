@@ -1,0 +1,123 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlChoice
+ *
+ * @ORM\Table(name="mdl_choice", indexes={@ORM\Index(name="mdl_choi_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlChoice
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="publish", type="boolean", nullable=false)
+     */
+    private $publish = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showresults", type="boolean", nullable=false)
+     */
+    private $showresults = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="display", type="smallint", nullable=false)
+     */
+    private $display = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="allowupdate", type="boolean", nullable=false)
+     */
+    private $allowupdate = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="showunanswered", type="boolean", nullable=false)
+     */
+    private $showunanswered = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="limitanswers", type="boolean", nullable=false)
+     */
+    private $limitanswers = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeopen", type="bigint", nullable=false)
+     */
+    private $timeopen = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeclose", type="bigint", nullable=false)
+     */
+    private $timeclose = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="completionsubmit", type="boolean", nullable=false)
+     */
+    private $completionsubmit = '0';
+
+
+}

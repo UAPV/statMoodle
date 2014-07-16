@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopAggregations
+ *
+ * @ORM\Table(name="mdl_workshop_aggregations", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_workaggr_woruse_uix", columns={"workshopid", "userid"})}, indexes={@ORM\Index(name="mdl_workaggr_wor_ix", columns={"workshopid"}), @ORM\Index(name="mdl_workaggr_use_ix", columns={"userid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopAggregations
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradinggrade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $gradinggrade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timegraded", type="bigint", nullable=true)
+     */
+    private $timegraded;
+
+
+}

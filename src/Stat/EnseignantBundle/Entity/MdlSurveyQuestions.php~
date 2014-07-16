@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlSurveyQuestions
+ *
+ * @ORM\Table(name="mdl_survey_questions")
+ * @ORM\Entity
+ */
+class MdlSurveyQuestions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="string", length=255, nullable=false)
+     */
+    private $text = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shorttext", type="string", length=30, nullable=false)
+     */
+    private $shorttext = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="multi", type="string", length=100, nullable=false)
+     */
+    private $multi = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="string", length=50, nullable=false)
+     */
+    private $intro = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type", type="smallint", nullable=false)
+     */
+    private $type = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="options", type="text", nullable=true)
+     */
+    private $options;
+
+
+}

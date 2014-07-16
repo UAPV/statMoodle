@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBackupFilesTemplate
+ *
+ * @ORM\Table(name="mdl_backup_files_template", indexes={@ORM\Index(name="mdl_backfiletemp_bacconcomf_ix", columns={"backupid", "contextid", "component", "filearea", "itemid"})})
+ * @ORM\Entity
+ */
+class MdlBackupFilesTemplate
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="backupid", type="string", length=32, nullable=false)
+     */
+    private $backupid = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filearea", type="string", length=50, nullable=false)
+     */
+    private $filearea = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="itemid", type="bigint", nullable=false)
+     */
+    private $itemid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="text", nullable=true)
+     */
+    private $info;
+
+
+}

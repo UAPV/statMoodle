@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGlossaryEntriesCategories
+ *
+ * @ORM\Table(name="mdl_glossary_entries_categories", indexes={@ORM\Index(name="mdl_glosentrcate_cat_ix", columns={"categoryid"}), @ORM\Index(name="mdl_glosentrcate_ent_ix", columns={"entryid"})})
+ * @ORM\Entity
+ */
+class MdlGlossaryEntriesCategories
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="categoryid", type="bigint", nullable=false)
+     */
+    private $categoryid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="entryid", type="bigint", nullable=false)
+     */
+    private $entryid = '0';
+
+
+}

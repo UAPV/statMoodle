@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionRandomsamatch
+ *
+ * @ORM\Table(name="mdl_question_randomsamatch", indexes={@ORM\Index(name="mdl_quesrand_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionRandomsamatch
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="choose", type="bigint", nullable=false)
+     */
+    private $choose = '4';
+
+
+}

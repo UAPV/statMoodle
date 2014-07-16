@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionNumericalUnits
+ *
+ * @ORM\Table(name="mdl_question_numerical_units", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_quesnumeunit_queuni_uix", columns={"question", "unit"})}, indexes={@ORM\Index(name="mdl_quesnumeunit_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionNumericalUnits
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="multiplier", type="decimal", precision=40, scale=20, nullable=false)
+     */
+    private $multiplier = '1.00000000000000000000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="unit", type="string", length=50, nullable=false)
+     */
+    private $unit = '';
+
+
+}

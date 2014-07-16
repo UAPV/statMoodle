@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionCalculatedOptions
+ *
+ * @ORM\Table(name="mdl_question_calculated_options", indexes={@ORM\Index(name="mdl_quescalcopti_que_ix", columns={"question"})})
+ * @ORM\Entity
+ */
+class MdlQuestionCalculatedOptions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="synchronize", type="boolean", nullable=false)
+     */
+    private $synchronize = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="single", type="smallint", nullable=false)
+     */
+    private $single = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="shuffleanswers", type="smallint", nullable=false)
+     */
+    private $shuffleanswers = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="correctfeedback", type="text", nullable=true)
+     */
+    private $correctfeedback;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="correctfeedbackformat", type="boolean", nullable=false)
+     */
+    private $correctfeedbackformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="partiallycorrectfeedback", type="text", nullable=true)
+     */
+    private $partiallycorrectfeedback;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="partiallycorrectfeedbackformat", type="boolean", nullable=false)
+     */
+    private $partiallycorrectfeedbackformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="incorrectfeedback", type="text", nullable=true)
+     */
+    private $incorrectfeedback;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="incorrectfeedbackformat", type="boolean", nullable=false)
+     */
+    private $incorrectfeedbackformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answernumbering", type="string", length=10, nullable=false)
+     */
+    private $answernumbering = 'abc';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="shownumcorrect", type="boolean", nullable=false)
+     */
+    private $shownumcorrect = '0';
+
+
+}

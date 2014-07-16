@@ -1,0 +1,46 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradeImportNewitem
+ *
+ * @ORM\Table(name="mdl_grade_import_newitem", indexes={@ORM\Index(name="mdl_gradimponewi_imp_ix", columns={"importer"})})
+ * @ORM\Entity
+ */
+class MdlGradeImportNewitem
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="itemname", type="string", length=255, nullable=false)
+     */
+    private $itemname = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="importcode", type="bigint", nullable=false)
+     */
+    private $importcode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="importer", type="bigint", nullable=false)
+     */
+    private $importer;
+
+
+}

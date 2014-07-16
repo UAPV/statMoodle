@@ -1,0 +1,39 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestionDatasets
+ *
+ * @ORM\Table(name="mdl_question_datasets", indexes={@ORM\Index(name="mdl_quesdata_quedat_ix", columns={"question", "datasetdefinition"}), @ORM\Index(name="mdl_quesdata_que_ix", columns={"question"}), @ORM\Index(name="mdl_quesdata_dat_ix", columns={"datasetdefinition"})})
+ * @ORM\Entity
+ */
+class MdlQuestionDatasets
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question", type="bigint", nullable=false)
+     */
+    private $question = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="datasetdefinition", type="bigint", nullable=false)
+     */
+    private $datasetdefinition = '0';
+
+
+}

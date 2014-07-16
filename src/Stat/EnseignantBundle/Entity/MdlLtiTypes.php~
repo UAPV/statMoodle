@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLtiTypes
+ *
+ * @ORM\Table(name="mdl_lti_types", indexes={@ORM\Index(name="mdl_ltitype_cou_ix", columns={"course"}), @ORM\Index(name="mdl_ltitype_too_ix", columns={"tooldomain"})})
+ * @ORM\Entity
+ */
+class MdlLtiTypes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = 'basiclti Activity';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="baseurl", type="text", nullable=false)
+     */
+    private $baseurl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tooldomain", type="string", length=255, nullable=false)
+     */
+    private $tooldomain = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="state", type="boolean", nullable=false)
+     */
+    private $state = '2';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="coursevisible", type="boolean", nullable=false)
+     */
+    private $coursevisible = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="createdby", type="bigint", nullable=false)
+     */
+    private $createdby;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

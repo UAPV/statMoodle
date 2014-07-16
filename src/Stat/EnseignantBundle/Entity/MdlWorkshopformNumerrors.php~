@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopformNumerrors
+ *
+ * @ORM\Table(name="mdl_workshopform_numerrors", indexes={@ORM\Index(name="mdl_worknume_wor_ix", columns={"workshopid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopformNumerrors
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sort", type="bigint", nullable=true)
+     */
+    private $sort = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="descriptionformat", type="smallint", nullable=true)
+     */
+    private $descriptionformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="descriptiontrust", type="bigint", nullable=true)
+     */
+    private $descriptiontrust;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade0", type="string", length=50, nullable=true)
+     */
+    private $grade0;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade1", type="string", length=50, nullable=true)
+     */
+    private $grade1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="weight", type="integer", nullable=true)
+     */
+    private $weight = '1';
+
+
+}

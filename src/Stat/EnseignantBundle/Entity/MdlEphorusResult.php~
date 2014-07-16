@@ -1,0 +1,95 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlEphorusResult
+ *
+ * @ORM\Table(name="mdl_ephorus_result", indexes={@ORM\Index(name="mdl_ephoresu_doc_ix", columns={"document_guid"})})
+ * @ORM\Entity
+ */
+class MdlEphorusResult
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="guid", type="string", length=36, nullable=true)
+     */
+    private $guid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="document_guid", type="string", length=36, nullable=true)
+     */
+    private $documentGuid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="original_guid", type="string", length=36, nullable=true)
+     */
+    private $originalGuid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="text", nullable=true)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mimetype", type="string", length=100, nullable=true)
+     */
+    private $mimetype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=100, nullable=true)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="percentage", type="string", length=5, nullable=true)
+     */
+    private $percentage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="diff", type="text", nullable=true)
+     */
+    private $diff;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="student_name", type="string", length=60, nullable=true)
+     */
+    private $studentName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="student_number", type="string", length=25, nullable=true)
+     */
+    private $studentNumber;
+
+
+}

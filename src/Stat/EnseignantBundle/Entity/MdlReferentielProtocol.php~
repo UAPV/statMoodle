@@ -1,0 +1,116 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielProtocol
+ *
+ * @ORM\Table(name="mdl_referentiel_protocol")
+ * @ORM\Entity
+ */
+class MdlReferentielProtocol
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_occurrence", type="bigint", nullable=false)
+     */
+    private $refOccurrence = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="seuil_referentiel", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $seuilReferentiel = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="minima_referentiel", type="bigint", nullable=false)
+     */
+    private $minimaReferentiel = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_domaines_oblig", type="text", nullable=false)
+     */
+    private $lDomainesOblig;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_seuils_domaines", type="text", nullable=false)
+     */
+    private $lSeuilsDomaines;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_minimas_domaines", type="text", nullable=false)
+     */
+    private $lMinimasDomaines;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_competences_oblig", type="text", nullable=false)
+     */
+    private $lCompetencesOblig;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_seuils_competences", type="text", nullable=false)
+     */
+    private $lSeuilsCompetences;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_minimas_competences", type="text", nullable=false)
+     */
+    private $lMinimasCompetences;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="l_items_oblig", type="text", nullable=false)
+     */
+    private $lItemsOblig;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="text", nullable=false)
+     */
+    private $commentaire;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actif", type="boolean", nullable=false)
+     */
+    private $actif = '0';
+
+
+}

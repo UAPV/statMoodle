@@ -1,0 +1,33 @@
+{% extends "StatEnseignantBundle::layout.html.twig" %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('.stackedBar').each(function()
+            {
+                id = $(this).attr('id');
+                idCours = $('#idCours').val();
+                url = $('#url').val();
+                getStackedBarChart(id,$('#'+id+'_data').val(),url+'/'+idCours);
+            });
+        })
+    </script>
+{% endblock %}
+
+{% block title %}{{ parent() }} - Détails de la vue cohorte pour le cours {% endblock %}
+
+{% block body %}
+    {% include 'StatEnseignantBundle:Cours:template/menu.html.twig' with {'enseignant': autres['teacher']|length, 'student':autres['student']|length, responsable: responsable, labelisation: labelisation  } only %}
+
+    <table id="tabDetailCours" class="table tableCours">
+        <tr>
+            <td>
+                <div id="container" class="stackedBar"></div>
+            </td>
+            <input id="container_data" type="hidden" value="{{ data|json_encode }}" />
+            <input id="url" type="hidden" value="{{ url }}" />
+            <input id="idCours" type="hidden" value="{{ id }}" />
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,109 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLessonPages
+ *
+ * @ORM\Table(name="mdl_lesson_pages", indexes={@ORM\Index(name="mdl_lesspage_les_ix", columns={"lessonid"})})
+ * @ORM\Entity
+ */
+class MdlLessonPages
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lessonid", type="bigint", nullable=false)
+     */
+    private $lessonid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prevpageid", type="bigint", nullable=false)
+     */
+    private $prevpageid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nextpageid", type="bigint", nullable=false)
+     */
+    private $nextpageid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="qtype", type="smallint", nullable=false)
+     */
+    private $qtype = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="qoption", type="smallint", nullable=false)
+     */
+    private $qoption = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="layout", type="smallint", nullable=false)
+     */
+    private $layout = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="display", type="smallint", nullable=false)
+     */
+    private $display = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contents", type="text", nullable=false)
+     */
+    private $contents;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="contentsformat", type="boolean", nullable=false)
+     */
+    private $contentsformat = '0';
+
+
+}

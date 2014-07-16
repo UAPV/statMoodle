@@ -1,0 +1,151 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWorkshopSubmissions
+ *
+ * @ORM\Table(name="mdl_workshop_submissions", indexes={@ORM\Index(name="mdl_worksubm_wor_ix", columns={"workshopid"}), @ORM\Index(name="mdl_worksubm_gra_ix", columns={"gradeoverby"}), @ORM\Index(name="mdl_worksubm_aut_ix", columns={"authorid"})})
+ * @ORM\Entity
+ */
+class MdlWorkshopSubmissions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="workshopid", type="bigint", nullable=false)
+     */
+    private $workshopid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="example", type="boolean", nullable=true)
+     */
+    private $example = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="authorid", type="bigint", nullable=false)
+     */
+    private $authorid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contentformat", type="smallint", nullable=false)
+     */
+    private $contentformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contenttrust", type="smallint", nullable=false)
+     */
+    private $contenttrust = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="attachment", type="boolean", nullable=true)
+     */
+    private $attachment = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grade", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $grade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradeover", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $gradeover;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gradeoverby", type="bigint", nullable=true)
+     */
+    private $gradeoverby;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feedbackauthor", type="text", nullable=true)
+     */
+    private $feedbackauthor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedbackauthorformat", type="smallint", nullable=true)
+     */
+    private $feedbackauthorformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timegraded", type="bigint", nullable=true)
+     */
+    private $timegraded;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="published", type="boolean", nullable=true)
+     */
+    private $published = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="late", type="boolean", nullable=false)
+     */
+    private $late = '0';
+
+
+}

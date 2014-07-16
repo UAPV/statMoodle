@@ -1,0 +1,214 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlEnrol
+ *
+ * @ORM\Table(name="mdl_enrol", indexes={@ORM\Index(name="mdl_enro_enr_ix", columns={"enrol"}), @ORM\Index(name="mdl_enro_cou_ix", columns={"courseid"})})
+ * @ORM\Entity
+ */
+class MdlEnrol
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enrol", type="string", length=20, nullable=false)
+     */
+    private $enrol = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="bigint", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enrolperiod", type="bigint", nullable=true)
+     */
+    private $enrolperiod = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enrolstartdate", type="bigint", nullable=true)
+     */
+    private $enrolstartdate = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enrolenddate", type="bigint", nullable=true)
+     */
+    private $enrolenddate = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="expirynotify", type="boolean", nullable=true)
+     */
+    private $expirynotify = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="expirythreshold", type="bigint", nullable=true)
+     */
+    private $expirythreshold = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="notifyall", type="boolean", nullable=true)
+     */
+    private $notifyall = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50, nullable=true)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cost", type="string", length=20, nullable=true)
+     */
+    private $cost;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency", type="string", length=3, nullable=true)
+     */
+    private $currency;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="roleid", type="bigint", nullable=true)
+     */
+    private $roleid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="customint1", type="bigint", nullable=true)
+     */
+    private $customint1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="customint2", type="bigint", nullable=true)
+     */
+    private $customint2;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="customint3", type="bigint", nullable=true)
+     */
+    private $customint3;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="customint4", type="bigint", nullable=true)
+     */
+    private $customint4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customchar1", type="string", length=255, nullable=true)
+     */
+    private $customchar1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customchar2", type="string", length=255, nullable=true)
+     */
+    private $customchar2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customdec1", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $customdec1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customdec2", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $customdec2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customtext1", type="text", nullable=true)
+     */
+    private $customtext1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="customtext2", type="text", nullable=true)
+     */
+    private $customtext2;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

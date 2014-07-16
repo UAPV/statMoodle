@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseCompletionAggrMethd
+ *
+ * @ORM\Table(name="mdl_course_completion_aggr_methd", indexes={@ORM\Index(name="mdl_courcompaggrmeth_cou_ix", columns={"course"}), @ORM\Index(name="mdl_courcompaggrmeth_cri_ix", columns={"criteriatype"})})
+ * @ORM\Entity
+ */
+class MdlCourseCompletionAggrMethd
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="criteriatype", type="bigint", nullable=true)
+     */
+    private $criteriatype;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="method", type="boolean", nullable=false)
+     */
+    private $method = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="decimal", precision=10, scale=5, nullable=true)
+     */
+    private $value;
+
+
+}

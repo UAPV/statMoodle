@@ -1,0 +1,116 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlMnetserviceEnrolCourses
+ *
+ * @ORM\Table(name="mdl_mnetservice_enrol_courses", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_mnetenrocour_hosrem_uix", columns={"hostid", "remoteid"})})
+ * @ORM\Entity
+ */
+class MdlMnetserviceEnrolCourses
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hostid", type="bigint", nullable=false)
+     */
+    private $hostid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="remoteid", type="bigint", nullable=false)
+     */
+    private $remoteid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="categoryid", type="bigint", nullable=false)
+     */
+    private $categoryid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categoryname", type="string", length=255, nullable=false)
+     */
+    private $categoryname = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullname", type="string", length=254, nullable=false)
+     */
+    private $fullname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortname", type="string", length=100, nullable=false)
+     */
+    private $shortname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idnumber", type="string", length=100, nullable=false)
+     */
+    private $idnumber = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="summary", type="text", nullable=false)
+     */
+    private $summary;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="summaryformat", type="smallint", nullable=true)
+     */
+    private $summaryformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="startdate", type="bigint", nullable=false)
+     */
+    private $startdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="roleid", type="bigint", nullable=false)
+     */
+    private $roleid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rolename", type="string", length=255, nullable=false)
+     */
+    private $rolename = '';
+
+
+}

@@ -1,0 +1,123 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentiel
+ *
+ * @ORM\Table(name="mdl_referentiel")
+ * @ORM\Entity
+ */
+class MdlReferentiel
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=80, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_instance", type="text", nullable=false)
+     */
+    private $descriptionInstance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label_domaine", type="string", length=80, nullable=false)
+     */
+    private $labelDomaine = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label_competence", type="string", length=80, nullable=false)
+     */
+    private $labelCompetence = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="label_item", type="string", length=80, nullable=false)
+     */
+    private $labelItem = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_instance", type="bigint", nullable=false)
+     */
+    private $dateInstance = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ref_referentiel", type="bigint", nullable=false)
+     */
+    private $refReferentiel = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="config", type="string", length=255, nullable=false)
+     */
+    private $config = 'scol:0;creref:0;selref:0;impcert:0;graph:0;light:0;';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="config_impression", type="string", length=255, nullable=false)
+     */
+    private $configImpression = 'refcert:1;instcert:0;numetu:1;nometu:1;etabetu:0;ddnetu:0;lieuetu:0;adretu:0;detail:1;pourcent:0;compdec:0;compval:1;nomreferent:0;jurycert:1;comcert:0;';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxbytes", type="bigint", nullable=false)
+     */
+    private $maxbytes = '1073741824';
+
+
+}

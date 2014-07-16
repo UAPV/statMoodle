@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlReferentielCourseUsers
+ *
+ * @ORM\Table(name="mdl_referentiel_course_users", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_refecouruser_couref_uix", columns={"courseid", "refrefid"})})
+ * @ORM\Entity
+ */
+class MdlReferentielCourseUsers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tab_users", type="blob", nullable=true)
+     */
+    private $tabUsers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tab_initiales", type="blob", nullable=true)
+     */
+    private $tabInitiales;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tab_pedagos", type="blob", nullable=true)
+     */
+    private $tabPedagos;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="courseid", type="bigint", nullable=false)
+     */
+    private $courseid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="refrefid", type="bigint", nullable=false)
+     */
+    private $refrefid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timestamp", type="bigint", nullable=false)
+     */
+    private $timestamp = '0';
+
+
+}

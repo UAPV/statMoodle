@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlContext
+ *
+ * @ORM\Table(name="mdl_context", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_cont_conins_uix", columns={"contextlevel", "instanceid"})}, indexes={@ORM\Index(name="mdl_cont_ins_ix", columns={"instanceid"}), @ORM\Index(name="mdl_cont_pat_ix", columns={"path"})})
+ * @ORM\Entity
+ */
+class MdlContext
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextlevel", type="bigint", nullable=false)
+     */
+    private $contextlevel = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instanceid", type="bigint", nullable=false)
+     */
+    private $instanceid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     */
+    private $path;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="depth", type="boolean", nullable=false)
+     */
+    private $depth = '0';
+
+
+}

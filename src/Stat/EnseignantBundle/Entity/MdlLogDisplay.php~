@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLogDisplay
+ *
+ * @ORM\Table(name="mdl_log_display", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_logdisp_modact_uix", columns={"module", "action"})})
+ * @ORM\Entity
+ */
+class MdlLogDisplay
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="module", type="string", length=20, nullable=false)
+     */
+    private $module = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=40, nullable=false)
+     */
+    private $action = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mtable", type="string", length=30, nullable=false)
+     */
+    private $mtable = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="field", type="string", length=200, nullable=false)
+     */
+    private $field = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+
+}

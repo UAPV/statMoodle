@@ -1,0 +1,144 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLanguagelab
+ *
+ * @ORM\Table(name="mdl_languagelab")
+ * @ORM\Entity
+ */
+class MdlLanguagelab
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="contentformat", type="boolean", nullable=true)
+     */
+    private $contentformat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timedue", type="bigint", nullable=false)
+     */
+    private $timedue;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timeavailable", type="bigint", nullable=false)
+     */
+    private $timeavailable;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="grade", type="bigint", nullable=false)
+     */
+    private $grade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="recording_timelimit", type="bigint", nullable=false)
+     */
+    private $recordingTimelimit;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="attempts", type="boolean", nullable=false)
+     */
+    private $attempts;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="video", type="boolean", nullable=true)
+     */
+    private $video = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="use_grade_book", type="boolean", nullable=true)
+     */
+    private $useGradeBook = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="group_type", type="boolean", nullable=true)
+     */
+    private $groupType = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="master_track", type="string", length=255, nullable=true)
+     */
+    private $masterTrack;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="master_track_recording", type="string", length=255, nullable=true)
+     */
+    private $masterTrackRecording;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="use_mp3", type="boolean", nullable=true)
+     */
+    private $useMp3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="student_delete_recordings", type="boolean", nullable=false)
+     */
+    private $studentDeleteRecordings = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

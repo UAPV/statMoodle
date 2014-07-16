@@ -1,0 +1,88 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlWebdavLocks
+ *
+ * @ORM\Table(name="mdl_webdav_locks", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_webdlock_tok_uix", columns={"token"})}, indexes={@ORM\Index(name="mdl_webdlock_pat_ix", columns={"path"}), @ORM\Index(name="mdl_webdlock_exp_ix", columns={"expiry"})})
+ * @ORM\Entity
+ */
+class MdlWebdavLocks
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=255, nullable=false)
+     */
+    private $token = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=false)
+     */
+    private $path = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="expiry", type="bigint", nullable=false)
+     */
+    private $expiry = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="recursive", type="boolean", nullable=false)
+     */
+    private $recursive = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="exclusivelock", type="boolean", nullable=false)
+     */
+    private $exclusivelock = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created", type="bigint", nullable=false)
+     */
+    private $created = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modified", type="bigint", nullable=false)
+     */
+    private $modified = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="owner", type="string", length=255, nullable=true)
+     */
+    private $owner;
+
+
+}

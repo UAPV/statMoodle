@@ -1,0 +1,179 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlForum
+ *
+ * @ORM\Table(name="mdl_forum", indexes={@ORM\Index(name="mdl_foru_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlForum
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=20, nullable=false)
+     */
+    private $type = 'general';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text", nullable=false)
+     */
+    private $intro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="introformat", type="smallint", nullable=false)
+     */
+    private $introformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assessed", type="bigint", nullable=false)
+     */
+    private $assessed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assesstimestart", type="bigint", nullable=false)
+     */
+    private $assesstimestart = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assesstimefinish", type="bigint", nullable=false)
+     */
+    private $assesstimefinish = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scale", type="bigint", nullable=false)
+     */
+    private $scale = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxbytes", type="bigint", nullable=false)
+     */
+    private $maxbytes = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxattachments", type="bigint", nullable=false)
+     */
+    private $maxattachments = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="forcesubscribe", type="boolean", nullable=false)
+     */
+    private $forcesubscribe = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="trackingtype", type="boolean", nullable=false)
+     */
+    private $trackingtype = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rsstype", type="boolean", nullable=false)
+     */
+    private $rsstype = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rssarticles", type="boolean", nullable=false)
+     */
+    private $rssarticles = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="warnafter", type="bigint", nullable=false)
+     */
+    private $warnafter = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="blockafter", type="bigint", nullable=false)
+     */
+    private $blockafter = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="blockperiod", type="bigint", nullable=false)
+     */
+    private $blockperiod = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completiondiscussions", type="integer", nullable=false)
+     */
+    private $completiondiscussions = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completionreplies", type="integer", nullable=false)
+     */
+    private $completionreplies = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="completionposts", type="integer", nullable=false)
+     */
+    private $completionposts = '0';
+
+
+}

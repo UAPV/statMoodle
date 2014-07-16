@@ -1,0 +1,158 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlUserInfoField
+ *
+ * @ORM\Table(name="mdl_user_info_field")
+ * @ORM\Entity
+ */
+class MdlUserInfoField
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortname", type="string", length=255, nullable=false)
+     */
+    private $shortname = 'shortname';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="text", nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datatype", type="string", length=255, nullable=false)
+     */
+    private $datatype = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="descriptionformat", type="boolean", nullable=false)
+     */
+    private $descriptionformat = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="categoryid", type="bigint", nullable=false)
+     */
+    private $categoryid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sortorder", type="bigint", nullable=false)
+     */
+    private $sortorder = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="required", type="boolean", nullable=false)
+     */
+    private $required = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="locked", type="boolean", nullable=false)
+     */
+    private $locked = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="visible", type="smallint", nullable=false)
+     */
+    private $visible = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="forceunique", type="boolean", nullable=false)
+     */
+    private $forceunique = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="signup", type="boolean", nullable=false)
+     */
+    private $signup = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="defaultdata", type="text", nullable=true)
+     */
+    private $defaultdata;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="defaultdataformat", type="boolean", nullable=false)
+     */
+    private $defaultdataformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="param1", type="text", nullable=true)
+     */
+    private $param1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="param2", type="text", nullable=true)
+     */
+    private $param2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="param3", type="text", nullable=true)
+     */
+    private $param3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="param4", type="text", nullable=true)
+     */
+    private $param4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="param5", type="text", nullable=true)
+     */
+    private $param5;
+
+
+}

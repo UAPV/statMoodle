@@ -1,0 +1,130 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGlossaryEntries
+ *
+ * @ORM\Table(name="mdl_glossary_entries", indexes={@ORM\Index(name="mdl_glosentr_use_ix", columns={"userid"}), @ORM\Index(name="mdl_glosentr_con_ix", columns={"concept"}), @ORM\Index(name="mdl_glosentr_glo_ix", columns={"glossaryid"})})
+ * @ORM\Entity
+ */
+class MdlGlossaryEntries
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="glossaryid", type="bigint", nullable=false)
+     */
+    private $glossaryid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="concept", type="string", length=255, nullable=false)
+     */
+    private $concept = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="definition", type="text", nullable=false)
+     */
+    private $definition;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="definitionformat", type="boolean", nullable=false)
+     */
+    private $definitionformat = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="definitiontrust", type="boolean", nullable=false)
+     */
+    private $definitiontrust = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="attachment", type="string", length=100, nullable=false)
+     */
+    private $attachment = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="teacherentry", type="boolean", nullable=false)
+     */
+    private $teacherentry = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sourceglossaryid", type="bigint", nullable=false)
+     */
+    private $sourceglossaryid = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="usedynalink", type="boolean", nullable=false)
+     */
+    private $usedynalink = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="casesensitive", type="boolean", nullable=false)
+     */
+    private $casesensitive = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="fullmatch", type="boolean", nullable=false)
+     */
+    private $fullmatch = '1';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="approved", type="boolean", nullable=false)
+     */
+    private $approved = '1';
+
+
+}

@@ -1,0 +1,151 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuestion
+ *
+ * @ORM\Table(name="mdl_question", indexes={@ORM\Index(name="mdl_ques_cat_ix", columns={"category"}), @ORM\Index(name="mdl_ques_par_ix", columns={"parent"}), @ORM\Index(name="mdl_ques_cre_ix", columns={"createdby"}), @ORM\Index(name="mdl_ques_mod_ix", columns={"modifiedby"})})
+ * @ORM\Entity
+ */
+class MdlQuestion
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="category", type="bigint", nullable=false)
+     */
+    private $category = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="parent", type="bigint", nullable=false)
+     */
+    private $parent = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="questiontext", type="text", nullable=false)
+     */
+    private $questiontext;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="questiontextformat", type="boolean", nullable=false)
+     */
+    private $questiontextformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="generalfeedback", type="text", nullable=false)
+     */
+    private $generalfeedback;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="generalfeedbackformat", type="boolean", nullable=false)
+     */
+    private $generalfeedbackformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="defaultmark", type="decimal", precision=12, scale=7, nullable=false)
+     */
+    private $defaultmark = '1.0000000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="penalty", type="decimal", precision=12, scale=7, nullable=false)
+     */
+    private $penalty = '0.3333333';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qtype", type="string", length=20, nullable=false)
+     */
+    private $qtype = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="length", type="bigint", nullable=false)
+     */
+    private $length = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stamp", type="string", length=255, nullable=false)
+     */
+    private $stamp = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="version", type="string", length=255, nullable=false)
+     */
+    private $version = '';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hidden", type="boolean", nullable=false)
+     */
+    private $hidden = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timecreated", type="bigint", nullable=false)
+     */
+    private $timecreated = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="createdby", type="bigint", nullable=true)
+     */
+    private $createdby;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modifiedby", type="bigint", nullable=true)
+     */
+    private $modifiedby;
+
+
+}

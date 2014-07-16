@@ -1,0 +1,298 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLesson
+ *
+ * @ORM\Table(name="mdl_lesson", indexes={@ORM\Index(name="mdl_less_cou_ix", columns={"course"})})
+ * @ORM\Entity
+ */
+class MdlLesson
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="course", type="bigint", nullable=false)
+     */
+    private $course = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="practice", type="smallint", nullable=false)
+     */
+    private $practice = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modattempts", type="smallint", nullable=false)
+     */
+    private $modattempts = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usepassword", type="smallint", nullable=false)
+     */
+    private $usepassword = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=32, nullable=false)
+     */
+    private $password = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dependency", type="bigint", nullable=false)
+     */
+    private $dependency = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conditions", type="text", nullable=false)
+     */
+    private $conditions;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="grade", type="smallint", nullable=false)
+     */
+    private $grade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="custom", type="smallint", nullable=false)
+     */
+    private $custom = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ongoing", type="smallint", nullable=false)
+     */
+    private $ongoing = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usemaxgrade", type="smallint", nullable=false)
+     */
+    private $usemaxgrade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxanswers", type="smallint", nullable=false)
+     */
+    private $maxanswers = '4';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxattempts", type="smallint", nullable=false)
+     */
+    private $maxattempts = '5';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="review", type="smallint", nullable=false)
+     */
+    private $review = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nextpagedefault", type="smallint", nullable=false)
+     */
+    private $nextpagedefault = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedback", type="smallint", nullable=false)
+     */
+    private $feedback = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="minquestions", type="smallint", nullable=false)
+     */
+    private $minquestions = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxpages", type="smallint", nullable=false)
+     */
+    private $maxpages = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timed", type="smallint", nullable=false)
+     */
+    private $timed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxtime", type="bigint", nullable=false)
+     */
+    private $maxtime = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="retake", type="smallint", nullable=false)
+     */
+    private $retake = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="activitylink", type="bigint", nullable=false)
+     */
+    private $activitylink = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mediafile", type="string", length=255, nullable=false)
+     */
+    private $mediafile = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mediaheight", type="bigint", nullable=false)
+     */
+    private $mediaheight = '100';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mediawidth", type="bigint", nullable=false)
+     */
+    private $mediawidth = '650';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mediaclose", type="smallint", nullable=false)
+     */
+    private $mediaclose = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="slideshow", type="smallint", nullable=false)
+     */
+    private $slideshow = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="width", type="bigint", nullable=false)
+     */
+    private $width = '640';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="height", type="bigint", nullable=false)
+     */
+    private $height = '480';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bgcolor", type="string", length=7, nullable=false)
+     */
+    private $bgcolor = '#FFFFFF';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="displayleft", type="smallint", nullable=false)
+     */
+    private $displayleft = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="displayleftif", type="smallint", nullable=false)
+     */
+    private $displayleftif = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="progressbar", type="smallint", nullable=false)
+     */
+    private $progressbar = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="highscores", type="smallint", nullable=false)
+     */
+    private $highscores = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="maxhighscores", type="bigint", nullable=false)
+     */
+    private $maxhighscores = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="available", type="bigint", nullable=false)
+     */
+    private $available = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="deadline", type="bigint", nullable=false)
+     */
+    private $deadline = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified = '0';
+
+
+}

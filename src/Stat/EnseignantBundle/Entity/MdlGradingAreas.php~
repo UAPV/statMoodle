@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlGradingAreas
+ *
+ * @ORM\Table(name="mdl_grading_areas", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_gradarea_concomare_uix", columns={"contextid", "component", "areaname"})}, indexes={@ORM\Index(name="mdl_gradarea_con_ix", columns={"contextid"})})
+ * @ORM\Entity
+ */
+class MdlGradingAreas
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contextid", type="bigint", nullable=false)
+     */
+    private $contextid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="component", type="string", length=100, nullable=false)
+     */
+    private $component = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="areaname", type="string", length=100, nullable=false)
+     */
+    private $areaname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="activemethod", type="string", length=100, nullable=true)
+     */
+    private $activemethod;
+
+
+}

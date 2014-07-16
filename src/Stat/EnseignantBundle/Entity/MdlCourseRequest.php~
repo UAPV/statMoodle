@@ -1,0 +1,74 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlCourseRequest
+ *
+ * @ORM\Table(name="mdl_course_request", indexes={@ORM\Index(name="mdl_courrequ_sho_ix", columns={"shortname"})})
+ * @ORM\Entity
+ */
+class MdlCourseRequest
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fullname", type="string", length=254, nullable=false)
+     */
+    private $fullname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortname", type="string", length=100, nullable=false)
+     */
+    private $shortname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="summary", type="text", nullable=false)
+     */
+    private $summary;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="summaryformat", type="boolean", nullable=false)
+     */
+    private $summaryformat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reason", type="text", nullable=false)
+     */
+    private $reason;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="requester", type="bigint", nullable=false)
+     */
+    private $requester = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50, nullable=false)
+     */
+    private $password = '';
+
+
+}

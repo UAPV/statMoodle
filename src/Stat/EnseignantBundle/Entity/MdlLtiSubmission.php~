@@ -1,0 +1,81 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlLtiSubmission
+ *
+ * @ORM\Table(name="mdl_lti_submission", indexes={@ORM\Index(name="mdl_ltisubm_lti_ix", columns={"ltiid"})})
+ * @ORM\Entity
+ */
+class MdlLtiSubmission
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ltiid", type="bigint", nullable=false)
+     */
+    private $ltiid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userid", type="bigint", nullable=false)
+     */
+    private $userid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="datesubmitted", type="bigint", nullable=false)
+     */
+    private $datesubmitted;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dateupdated", type="bigint", nullable=false)
+     */
+    private $dateupdated;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gradepercent", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $gradepercent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="originalgrade", type="decimal", precision=10, scale=5, nullable=false)
+     */
+    private $originalgrade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="launchid", type="bigint", nullable=false)
+     */
+    private $launchid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="state", type="boolean", nullable=false)
+     */
+    private $state;
+
+
+}

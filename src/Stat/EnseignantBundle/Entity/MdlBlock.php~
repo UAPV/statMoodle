@@ -1,0 +1,60 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlBlock
+ *
+ * @ORM\Table(name="mdl_block", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_bloc_nam_uix", columns={"name"})})
+ * @ORM\Entity
+ */
+class MdlBlock
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=40, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="version", type="bigint", nullable=false)
+     */
+    private $version = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cron", type="bigint", nullable=false)
+     */
+    private $cron = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lastcron", type="bigint", nullable=false)
+     */
+    private $lastcron = '0';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible = '1';
+
+
+}

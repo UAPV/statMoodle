@@ -1,0 +1,67 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlQuizOverviewRegrades
+ *
+ * @ORM\Table(name="mdl_quiz_overview_regrades")
+ * @ORM\Entity
+ */
+class MdlQuizOverviewRegrades
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="questionusageid", type="bigint", nullable=false)
+     */
+    private $questionusageid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="slot", type="bigint", nullable=false)
+     */
+    private $slot;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newfraction", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $newfraction;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oldfraction", type="decimal", precision=12, scale=7, nullable=true)
+     */
+    private $oldfraction;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regraded", type="smallint", nullable=false)
+     */
+    private $regraded;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="timemodified", type="bigint", nullable=false)
+     */
+    private $timemodified;
+
+
+}

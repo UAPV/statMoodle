@@ -1,0 +1,53 @@
+<?php
+
+namespace Stat\EnseignantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MdlScormSeqRolluprulecond
+ *
+ * @ORM\Table(name="mdl_scorm_seq_rolluprulecond", uniqueConstraints={@ORM\UniqueConstraint(name="mdl_scorseqroll_scorolid_uix", columns={"scoid", "rollupruleid", "id"})}, indexes={@ORM\Index(name="mdl_scorseqroll_sco2_ix", columns={"scoid"}), @ORM\Index(name="mdl_scorseqroll_rol_ix", columns={"rollupruleid"})})
+ * @ORM\Entity
+ */
+class MdlScormSeqRolluprulecond
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="scoid", type="bigint", nullable=false)
+     */
+    private $scoid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rollupruleid", type="bigint", nullable=false)
+     */
+    private $rollupruleid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="operator", type="string", length=5, nullable=false)
+     */
+    private $operator = 'noOp';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cond", type="string", length=25, nullable=false)
+     */
+    private $cond = '';
+
+
+}
