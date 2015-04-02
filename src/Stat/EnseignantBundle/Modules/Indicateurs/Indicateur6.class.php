@@ -27,7 +27,7 @@ class Indicateur6 extends Indicateur{
         //Récupère le nombre total de rendus (devoir, test, atelier) pour un cours
         $data[1]['indicateur3']['titre'] = 'Rendus (au moins un)';
         $data[1]['indicateur3']['desc'] = 'Les rendus';
-        $data[1]['indicateur3']['requete'] = "SELECT COUNT(DISTINCT A.id)+(SELECT count(L.id) FROM mdl_lesson L WHERE L.course LIKE '%".$idCours."')+(SELECT count(W.id) FROM mdl_workshop W WHERE W.course LIKE '%".$idCours."') AS moy FROM mdl_assignment A          INNER JOIN mdl_assignment_submissions S ON A.id = S.assignment WHERE A.course LIKE '%".$idCours."' AND S.numfiles > 0";
+        $data[1]['indicateur3']['requete'] = "SELECT COUNT(DISTINCT A.id)+(SELECT count(L.id) FROM mdl_lesson L WHERE L.course = $idCours)+(SELECT count(W.id) FROM mdl_workshop W WHERE W.course = $idCours) + (SELECT count(B.id) FROM mdl_assign B WHERE B.course = $idCours) AS moy FROM mdl_assignment A INNER JOIN mdl_assignment_submissions S ON A.id = S.assignment WHERE A.course = $idCours AND S.numfiles > 0";
         //Récupère le nombre total de discussions dans les forums pour un cours
         $data[1]['indicateur4']['titre'] = 'Sujets dans les forums';
         $data[1]['indicateur4']['desc'] = 'Les sujets dans les forums';

@@ -37,9 +37,7 @@ class Indicateur2 extends Indicateur{
         $data[3]['type'] = 'column';
         $data[3]['indicateur1']['titre'] = 'Rendus (au moins un)';
         $data[3]['indicateur1']['desc'] = 'Les rendus';
-        $data[3]['indicateur1']['requete']['devoir'] = "SELECT COUNT(DISTINCT A.id) as moy FROM mdl_assignment A
-                                                        INNER JOIN mdl_assignment_submissions S ON A.id = S.assignment
-                                                        WHERE A.course = $idCours AND S.numfiles > 0";
+        $data[3]['indicateur1']['requete']['devoir'] = "SELECT COUNT(DISTINCT A.id)+(SELECT count(L.id) FROM mdl_lesson L WHERE L.course = $idCours)+(SELECT count(W.id) FROM mdl_workshop W WHERE W.course = $idCours) + (SELECT count(B.id) FROM mdl_assign B WHERE B.course = $idCours) AS moy FROM mdl_assignment A INNER JOIN mdl_assignment_submissions S ON A.id = S.assignment WHERE A.course = $idCours AND S.numfiles > 0";
         $data[3]['indicateur1']['requete']['test'] = "SELECT count(L.id) as moy FROM mdl_lesson L WHERE L.course = $idCours";
         $data[3]['indicateur1']['requete']['atelier'] = "SELECT count(W.id) as moy FROM mdl_workshop W WHERE W.course = $idCours";
 
