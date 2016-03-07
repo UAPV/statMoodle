@@ -15,7 +15,7 @@ Créer deux dossiers dans "app" : cache et logs. Il devront avoir les droits de 
 
 * Modification de la connexion à la base de données
 
-Ouvrir le fichier "app > config > config_dev.php", modifier la partie "Doctrine Configuration" et entrer vos parametres.
+Ouvrir le fichier "app > config > config_dev.yml", modifier la partie "Doctrine Configuration" et entrer vos parametres.
 Si vous utilisez la base de données du Système d'Information, vous pouvez indiquer ces paramètres dans "appig"
 
 Une fois ceci fait, il va falloir configurer le CAS et le LDAP pour s'authentifier à l'application.
