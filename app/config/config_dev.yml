@@ -49,23 +49,6 @@ doctrine:
         default_connection: moodle # précise la connexion utilisée par défaut
         connections:
           moodle:
-<<<<<<< HEAD
-            driver:   pdo_mysql
-            #host:     host
-            port:     null
-            #dbname:   dbname
-            #user:     user
-            #password: passwd
-            charset:  UTF8
-          appig:
-            driver:   pdo_pgsql
-            #host:     host
-            port:     
-            #dbname:  dbname
-            #user:    user
-            #password: passwd
-            charset:  UTF8
-=======
             driver:
             host:
             port:
@@ -81,7 +64,6 @@ doctrine:
           #  user:
           #  password:
           #  charset:  UTF8
->>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
         # if using pdo_sqlite as your database driver, add the path in parameters.yml
         # e.g. database_path: "%kernel.root_dir%/data/data.db3"
@@ -94,22 +76,15 @@ doctrine:
                 connection: moodle
                 mappings:
                     StatEnseignantBundle : ~
-<<<<<<< HEAD
-=======
             #appig:
             #    connection: appig
             #    mappings:
             #        DosiAppigBundle : ~
->>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
 # Swiftmailer Configuration
 swiftmailer:
     transport: smtp
-<<<<<<< HEAD
-    host:      smtp.univ-avignon.fr
-=======
     host:
->>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     username:  null
     password:  null
     spool:     { type: memory }
@@ -120,22 +95,6 @@ dosi_auth:
             id: cas
             version: 2
         server:
-<<<<<<< HEAD
-            id: cas
-            login_url: https://cas.univ-avignon.fr/login
-            logout_url: https://cas.univ-avignon.fr/logout
-            validation_url: https://cas.univ-avignon.fr/serviceValidate
-    client:
-        #host: host 
-        #port: port
-        #version: version
-    user:
-        #base_dn: dc=univ-avignon,dc=fr
-        #name_attribute: uid
-    role:
-        #base_dn: dc=univ-avignon,dc=fr
-        filter: NULL
-=======
             id:
             login_url:
             logout_url:
@@ -155,5 +114,4 @@ services:
         class:  Twig_Extension_Debug
         tags:
              - { name: 'twig.extension' }
->>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
