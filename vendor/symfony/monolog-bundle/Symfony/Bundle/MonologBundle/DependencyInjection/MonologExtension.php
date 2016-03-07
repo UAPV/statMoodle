@@ -29,6 +29,11 @@ class MonologExtension extends Extension
 {
     private $nestedHandlers = array();
 
+<<<<<<< HEAD
+=======
+    private $swiftMailerHandlers = array();
+
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     /**
      * Loads the Monolog configuration.
      *
@@ -54,6 +59,14 @@ class MonologExtension extends Extension
                 );
             }
 
+<<<<<<< HEAD
+=======
+            $container->setParameter(
+                'monolog.swift_mailer.handlers',
+                $this->swiftMailerHandlers
+            );
+
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             ksort($handlers);
             $sortedHandlers = array();
             foreach ($handlers as $priorityHandlers) {
@@ -315,7 +328,11 @@ class MonologExtension extends Extension
                 $handler['bubble'],
             ));
             if (!$oldHandler) {
+<<<<<<< HEAD
                 $definition->addMethodCall('setTransport', array(new Reference('swiftmailer.transport.real')));
+=======
+                $this->swiftMailerHandlers[] = $handlerId;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
                 $definition->addTag('kernel.event_listener', array('event' => 'kernel.terminate', 'method' => 'onKernelTerminate'));
             }
             break;

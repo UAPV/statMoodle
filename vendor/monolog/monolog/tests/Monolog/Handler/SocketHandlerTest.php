@@ -120,7 +120,11 @@ class SocketHandlerTest extends TestCase
     {
         $this->setMockHandler(array('fwrite'));
 
+<<<<<<< HEAD
         $callback = function($arg) {
+=======
+        $callback = function ($arg) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $map = array(
                 'Hello world' => 6,
                 'world' => false,
@@ -143,7 +147,11 @@ class SocketHandlerTest extends TestCase
     {
         $this->setMockHandler(array('fwrite', 'streamGetMetadata'));
 
+<<<<<<< HEAD
         $callback = function($arg) {
+=======
+        $callback = function ($arg) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $map = array(
                 'Hello world' => 6,
                 'world' => 5,
@@ -170,7 +178,11 @@ class SocketHandlerTest extends TestCase
         $this->setMockHandler(array('fwrite', 'streamGetMetadata'));
 
         $res = $this->res;
+<<<<<<< HEAD
         $callback = function($string) use ($res) {
+=======
+        $callback = function ($string) use ($res) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             fclose($res);
 
             return strlen('Hello');
@@ -200,7 +212,11 @@ class SocketHandlerTest extends TestCase
     {
         $this->setMockHandler(array('fwrite'));
 
+<<<<<<< HEAD
         $callback = function($arg) {
+=======
+        $callback = function ($arg) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $map = array(
                 'Hello world' => 6,
                 'world' => 5,

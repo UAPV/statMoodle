@@ -12,7 +12,10 @@
 namespace Monolog\Formatter;
 
 use Monolog\Logger;
+<<<<<<< HEAD
 use Monolog\Formatter\LogstashFormatter;
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
 class LogstashFormatterTest extends \PHPUnit_Framework_TestCase
 {

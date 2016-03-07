@@ -69,7 +69,11 @@ class ConcatFunction extends FunctionNode
         
         $parser->match(Lexer::T_COMMA);
         
+<<<<<<< HEAD
         $this->secondStringPrimary = $parser->StringPrimary();
+=======
+        $this->secondStringPrimary = $parser->StringPrimary();
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         $this->concatExpressions[] = $this->secondStringPrimary;
         
         while ($parser->getLexer()->isNextToken(Lexer::T_COMMA)) {

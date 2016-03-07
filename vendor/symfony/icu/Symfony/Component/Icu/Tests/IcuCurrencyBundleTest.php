@@ -92,7 +92,11 @@ class IcuCurrencyBundleTest extends IcuTestCase
 
         $this->reader->expects($this->once())
             ->method('readEntry')
+<<<<<<< HEAD
             ->with($this->resDir, 'supplementaldata', array('CurrencyMeta'))
+=======
+            ->with($this->resDir, 'misc', array('CurrencyMeta'))
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             ->will($this->returnValue($currencyData));
 
         $this->assertSame(123, $this->bundle->getFractionDigits('EUR'));
@@ -107,7 +111,11 @@ class IcuCurrencyBundleTest extends IcuTestCase
 
         $this->reader->expects($this->once())
             ->method('readEntry')
+<<<<<<< HEAD
             ->with($this->resDir, 'supplementaldata', array('CurrencyMeta'))
+=======
+            ->with($this->resDir, 'misc', array('CurrencyMeta'))
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             ->will($this->returnValue($currencyData));
 
         $this->assertSame(123, $this->bundle->getFractionDigits('EUR'));
@@ -122,7 +130,11 @@ class IcuCurrencyBundleTest extends IcuTestCase
 
         $this->reader->expects($this->once())
             ->method('readEntry')
+<<<<<<< HEAD
             ->with($this->resDir, 'supplementaldata', array('CurrencyMeta'))
+=======
+            ->with($this->resDir, 'misc', array('CurrencyMeta'))
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             ->will($this->returnValue($currencyData));
 
         $this->assertSame(123, $this->bundle->getRoundingIncrement('EUR'));
@@ -137,7 +149,11 @@ class IcuCurrencyBundleTest extends IcuTestCase
 
         $this->reader->expects($this->once())
             ->method('readEntry')
+<<<<<<< HEAD
             ->with($this->resDir, 'supplementaldata', array('CurrencyMeta'))
+=======
+            ->with($this->resDir, 'misc', array('CurrencyMeta'))
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             ->will($this->returnValue($currencyData));
 
         $this->assertSame(123, $this->bundle->getRoundingIncrement('EUR'));

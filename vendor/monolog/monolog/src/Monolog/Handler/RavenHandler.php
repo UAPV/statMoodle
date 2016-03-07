@@ -14,7 +14,10 @@ namespace Monolog\Handler;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Logger;
+<<<<<<< HEAD
 use Monolog\Handler\AbstractProcessingHandler;
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 use Raven_Client;
 
 /**
@@ -69,7 +72,11 @@ class RavenHandler extends AbstractProcessingHandler
         $level = $this->level;
 
         // filter records based on their level
+<<<<<<< HEAD
         $records = array_filter($records, function($record) use ($level) {
+=======
+        $records = array_filter($records, function ($record) use ($level) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             return $record['level'] >= $level;
         });
 
@@ -78,7 +85,11 @@ class RavenHandler extends AbstractProcessingHandler
         }
 
         // the record with the highest severity is the "main" one
+<<<<<<< HEAD
         $record = array_reduce($records, function($highest, $record) {
+=======
+        $record = array_reduce($records, function ($highest, $record) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             if ($record['level'] >= $highest['level']) {
                 return $record;
             }

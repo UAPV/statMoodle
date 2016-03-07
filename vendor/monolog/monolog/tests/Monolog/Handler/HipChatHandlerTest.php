@@ -156,4 +156,15 @@ class HipChatHandlerTest extends TestCase
 
         $this->handler->setFormatter($this->getIdentityFormatter());
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateWithTooLongName()
+    {
+        $hipChatHandler = new \Monolog\Handler\HipChatHandler('token', 'room', 'SixteenCharsHere');
+    }
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 }

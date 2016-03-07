@@ -73,7 +73,12 @@ class StreamHandler extends AbstractProcessingHandler
         fwrite($this->stream, (string) $record['formatted']);
     }
 
+<<<<<<< HEAD
     private function customErrorHandler($code, $msg) {
+=======
+    private function customErrorHandler($code, $msg)
+    {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         $this->errorMessage = preg_replace('{^fopen\(.*?\): }', '', $msg);
     }
 }

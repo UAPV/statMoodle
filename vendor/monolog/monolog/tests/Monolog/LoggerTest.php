@@ -162,7 +162,11 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
         $logger = new Logger(__METHOD__);
         $handler = new TestHandler;
         $logger->pushHandler($handler);
+<<<<<<< HEAD
         $logger->pushProcessor(function($record) {
+=======
+        $logger->pushProcessor(function ($record) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $record['extra']['win'] = true;
 
             return $record;
@@ -216,7 +220,11 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
         ;
         $logger->pushHandler($handler);
         $that = $this;
+<<<<<<< HEAD
         $logger->pushProcessor(function($record) use ($that) {
+=======
+        $logger->pushProcessor(function ($record) use ($that) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $that->fail('The processor should not be called');
         });
         $logger->addAlert('test');

@@ -141,8 +141,13 @@ abstract class AbstractHandler implements HandlerInterface
     /**
      * Sets the bubbling behavior.
      *
+<<<<<<< HEAD
      * @param Boolean $bubble true means that this handler allows bubbling.
      *                        false means that bubbling is not permitted.
+=======
+     * @param  Boolean $bubble true means that this handler allows bubbling.
+     *                         false means that bubbling is not permitted.
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      * @return self
      */
     public function setBubble($bubble)

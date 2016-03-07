@@ -3,6 +3,7 @@
 {% block javascripts %}
     <script type="text/javascript">
         $(document).ready(function(){
+<<<<<<< HEAD
             $('.column').each(function()
             {
                 id = $(this).attr('id');
@@ -13,6 +14,13 @@
                 id = $(this).attr('id');
 
                 //getStackedBarChart(id,$('#'+id+'_data').val(),"");
+=======
+            var max = 20;
+            $('.graph').each(function()
+            {
+                id = $(this).attr('id');
+                getGraph($('#'+id+'_type').val(), id,$('#'+id+'_titre').val(),$('#'+id+'_data').val(),$('#'+id+'_max').val(),36,51);
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             });
         })
     </script>
@@ -21,6 +29,7 @@
 {% block title %}{{ parent() }} - Détails de l'étudiant pour le cours {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
     <h1>Détails de l'étudiant(e) "{{ name }}" pour ce cours</h1>
     <table id="tabDetailCours" class="table tableCours">
         <tr>
@@ -29,5 +38,31 @@
             </td>
             <input id="container_data" type="hidden" value="{{ data|json_encode }}" />
         </tr>
+=======
+    {% include 'StatEnseignantBundle:Cours:template/menu.html.twig' with {'enseignant': autres['teacher']|length, 'student':autres['student']|length, responsable: responsable, labelisation: labelisation  } only %}
+
+    <h1>Détails de l'étudiant(e) "{{ name }}" pour ce cours</h1>
+    <table id="tabDetailCours" class="table tableCours">
+        {% for tmp in data %}
+            {% for t in tmp %}
+            <tr>
+                <th>
+                    <p class="titreCours">{{ t["titre"] }}</p>
+                    <p class="descriptionCours">
+                        {% if t['description'] is defined %} {{ t['description']|raw }}
+                        {% endif %}
+                    </p>
+                </th>
+                <td>
+                    <div id="{{ 'container_' ~ loop.index }}" class="{{ t['type']|default('') }} graph"></div>
+                </td>
+                <input id="{{ 'container_' ~ loop.index ~ '_data' }}" type="hidden" value="{{ t['data']|json_encode }}" />
+                <input id="{{ 'container_' ~ loop.index ~ '_titre' }}" type="hidden" value="{{ t['titre'] |default('')}}" />
+                <input id="{{ 'container_' ~ loop.index ~ '_max' }}" type="hidden" value="{{ t['max'] |default('')}}" />
+                <input id="{{ 'container_' ~ loop.index ~ '_type' }}" type="hidden" value="{{ t['type'] }}" />
+            </tr>
+            {% endfor %}
+        {% endfor %}
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     </table>
 {% endblock %}

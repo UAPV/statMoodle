@@ -21,7 +21,13 @@ class DynamoDbHandlerTest extends TestCase
             $this->markTestSkipped('aws/aws-sdk-php not installed');
         }
 
+<<<<<<< HEAD
         $this->client = $this->getMockBuilder('Aws\DynamoDb\DynamoDbClient')->disableOriginalConstructor()->getMock();
+=======
+        $this->client = $this->getMockBuilder('Aws\DynamoDb\DynamoDbClient')
+            ->setMethods(array('formatAttributes', '__call'))
+            ->disableOriginalConstructor()->getMock();
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     }
 
     public function testConstruct()

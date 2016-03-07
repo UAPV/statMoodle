@@ -105,7 +105,11 @@ class RotatingFileHandler extends StreamHandler
         }
 
         // Sorting the files by name to remove the older ones
+<<<<<<< HEAD
         usort($logFiles, function($a, $b) {
+=======
+        usort($logFiles, function ($a, $b) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             return strcmp($b, $a);
         });
 

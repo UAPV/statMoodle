@@ -1,7 +1,11 @@
 
 /** Structure de la page **/
 html, body {
+<<<<<<< HEAD
   background: none repeat scroll 0 0 #FCFAF7;
+=======
+  background: none repeat scroll 0 0 #F2EDE7 !important;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
   margin-bottom: 40px;
 }
 
@@ -15,6 +19,17 @@ h1 {
     text-shadow: 1px 1px 1px #FFFFFF !important;
 }
 
+<<<<<<< HEAD
+=======
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 #header {
     height: 100px;
     padding: 0;
@@ -55,7 +70,10 @@ h1 {
     margin-left: 20px;
     margin-top: 5px;
     position: absolute;
+<<<<<<< HEAD
     z-index: 10;
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 }
 
 a:visited, a {
@@ -159,4 +177,225 @@ ul#menu li a {
 .titreCours {
     padding: 5px;
     color: #39B3D7;
+<<<<<<< HEAD
+=======
+}
+
+/** ALERTES **/
+
+.alerte {
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    float: right;
+    padding: 8px;
+    background: #ffffff;
+}
+.textAlerte {
+    font-size: 10px;
+    float: right;
+    margin-bottom: 10px;
+    text-align: right;
+    width: 100px;
+}
+
+.feuAlerte {
+    border-radius:50%;
+    width:10px;
+    height:10px;
+    float: left;
+    margin-left: 5px;
+}
+
+.alerteOneCours {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: #F7FDFF;
+}
+
+.textAlerteOneCours {
+   float: none;
+   width: 100%;
+   text-align: center;
+   font-style: italic;
+   font-size: 12px;
+   margin-bottom: 0px;
+}
+
+.highcharts-axis-labels > span {
+  left: 30px !important;
+}
+
+.headerTableIndex {
+  background-color: #F6F6F6 !important;
+  color: #898C8D;
+}
+
+.vueIndex {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.vueIndex li {
+  display: inline;
+  margin-right: 40px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.vueIndex li a {
+  color: #898C8D;
+}
+
+.vueIndex li a:hover {
+  text-decoration: none;
+}
+
+#tabMesCoursEnseignant {
+  margin-top: 10px;
+}
+
+#tabVueResponsable {
+  margin-top: 100px;
+}
+
+#tabResponsableFormation {
+ margin-top: 20px;
+}
+
+
+/*** Pages de labelisation ***/
+
+.blocLabelisation {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.blocLabelisation th{
+    text-align: center;
+}
+
+.blocLabelisation form {
+    width: 50%;
+    margin-left: 50px;
+    text-align: left;
+}
+
+#creerLien {
+    float: right;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+
+.uce {
+    border: 1px solid #ccc;
+    margin: 10px 10px 20px 10px;
+    border-collapse:collapse;
+}
+
+.nomUE,.infosUE {
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.nomUE {
+    color: #5BA0D4;
+}
+
+.infosUE {
+    color: #626C72;
+}
+
+.epingle {
+    width: 30px;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.feedback, .score {
+    margin-left: 20px;
+    margin-right: 30px;
+    text-align: left;
+}
+
+.error {
+    border: 1px solid #DB2B31;
+}
+
+.ok {
+    border: 1px solid #C8C56C;
+}
+
+.moyen {
+    border: 1px solid #F2A757;
+}
+
+.scoreNumber {
+    margin-left: 45px;
+    font-weight: bold;
+}
+
+#indicateurs {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #C4C2C0;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#indicateurs .left {
+    margin-left: 50px;
+}
+
+#indicateurs .left, #indicateurs .right {
+    width: 50%;
+    padding: 30px;
+    border: 10px solid #F6F6F6;
+    border-radius: 125px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    height: 230px;
+    padding: 30px;
+    width: 230px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#indicateurs .left:hover, #indicateurs .right:hover {
+    border-color: #666666;
+    z-index: 999;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    color: #000;
+    text-shadow: 0px 0px 1px #000;
+    -webkit-animation: moveFromBottom 300ms ease;
+    -moz-animation: moveFromBottom 300ms ease;
+    -ms-animation: moveFromBottom 300ms ease;
+}
+
+#indicateurs .left .labelIndic, #indicateurs .right .labelIndic {
+    display: block;
+}
+
+#indicateurs .left:hover .labelIndic, #indicateurs .right:hover .labelIndic {
+    color: #666666;
+    text-shadow: none;
+    transform: scale(1,1);
+}
+
+.chiffre {
+    font-size: 26px;
+    color: #A5A3A1;
+}
+
+.highcharts-container {
+    z-index: 0;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 }

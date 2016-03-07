@@ -291,8 +291,30 @@ class ClassLoader
             return $this->classMap[$class];
         }
 
+<<<<<<< HEAD
         // PSR-4 lookup
         $logicalPathPsr4 = strtr($class, '\\', DIRECTORY_SEPARATOR) . '.php';
+=======
+        $file = $this->findFileWithExtension($class, '.php');
+
+        // Search for Hack files if we are running on HHVM
+        if ($file === null && defined('HHVM_VERSION')) {
+            $file = $this->findFileWithExtension($class, '.hh');
+        }
+
+        if ($file === null) {
+            // Remember that this class does not exist.
+            return $this->classMap[$class] = false;
+        }
+
+        return $file;
+    }
+
+    private function findFileWithExtension($class, $ext)
+    {
+        // PSR-4 lookup
+        $logicalPathPsr4 = strtr($class, '\\', DIRECTORY_SEPARATOR) . $ext;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
         $first = $class[0];
         if (isset($this->prefixLengthsPsr4[$first])) {
@@ -321,7 +343,11 @@ class ClassLoader
                 . strtr(substr($logicalPathPsr4, $pos + 1), '_', DIRECTORY_SEPARATOR);
         } else {
             // PEAR-like class name
+<<<<<<< HEAD
             $logicalPathPsr0 = strtr($class, '_', DIRECTORY_SEPARATOR) . '.php';
+=======
+            $logicalPathPsr0 = strtr($class, '_', DIRECTORY_SEPARATOR) . $ext;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         }
 
         if (isset($this->prefixesPsr0[$first])) {
@@ -347,9 +373,12 @@ class ClassLoader
         if ($this->useIncludePath && $file = stream_resolve_include_path($logicalPathPsr0)) {
             return $file;
         }
+<<<<<<< HEAD
 
         // Remember that this class does not exist.
         return $this->classMap[$class] = false;
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     }
 }
 

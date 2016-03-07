@@ -46,10 +46,17 @@ class ElasticSearchHandler extends AbstractProcessingHandler
     protected $options = array();
 
     /**
+<<<<<<< HEAD
      * @param Client  $client   Elastica Client object
      * @param array   $options  Handler configuration
      * @param integer $level    The minimum logging level at which this handler will be triggered
      * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+=======
+     * @param Client  $client  Elastica Client object
+     * @param array   $options Handler configuration
+     * @param integer $level   The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble  Whether the messages that are handled can bubble up the stack or not
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      */
     public function __construct(Client $client, array $options = array(), $level = Logger::DEBUG, $bubble = true)
     {
@@ -112,7 +119,11 @@ class ElasticSearchHandler extends AbstractProcessingHandler
 
     /**
      * Use Elasticsearch bulk API to send list of documents
+<<<<<<< HEAD
      * @param array $documents
+=======
+     * @param  array             $documents
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      * @throws \RuntimeException
      */
     protected function bulkSend(array $documents)

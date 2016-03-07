@@ -28,9 +28,18 @@ class IntrospectionProcessor
 {
     private $level;
 
+<<<<<<< HEAD
     public function __construct($level = Logger::DEBUG)
     {
         $this->level = $level;
+=======
+    private $skipClassesPartials;
+
+    public function __construct($level = Logger::DEBUG, array $skipClassesPartials = array('Monolog\\'))
+    {
+        $this->level = $level;
+        $this->skipClassesPartials = $skipClassesPartials;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     }
 
     /**
@@ -52,8 +61,20 @@ class IntrospectionProcessor
         array_shift($trace);
 
         $i = 0;
+<<<<<<< HEAD
         while (isset($trace[$i]['class']) && false !== strpos($trace[$i]['class'], 'Monolog\\')) {
             $i++;
+=======
+
+        while (isset($trace[$i]['class'])) {
+            foreach ($this->skipClassesPartials as $part) {
+                if (strpos($trace[$i]['class'], $part) !== false) {
+                    $i++;
+                    continue 2;
+                }
+            }
+            break;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         }
 
         // we should have the call source now

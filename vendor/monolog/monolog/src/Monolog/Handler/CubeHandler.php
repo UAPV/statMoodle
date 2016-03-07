@@ -32,8 +32,13 @@ class CubeHandler extends AbstractProcessingHandler
      * Create a Cube handler
      *
      * @throws UnexpectedValueException when given url is not a valid url.
+<<<<<<< HEAD
      * A valid url must consists of three parts : protocol://host:port
      * Only valid protocol used by Cube are http and udp
+=======
+     *                                  A valid url must consists of three parts : protocol://host:port
+     *                                  Only valid protocol used by Cube are http and udp
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      */
     public function __construct($url, $level = Logger::DEBUG, $bubble = true)
     {

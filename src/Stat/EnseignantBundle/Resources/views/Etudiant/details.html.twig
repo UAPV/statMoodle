@@ -3,6 +3,10 @@
 {% block javascripts %}
     <script type="text/javascript">
         $(document).ready(function(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $('.stackedBar').each(function()
             {
                 id = $(this).attr('id');
@@ -14,9 +18,16 @@
     </script>
 {% endblock %}
 
+<<<<<<< HEAD
 {% block title %}{{ parent() }} - Détails de la vue étudiante pour le cours {% endblock %}
 
 {% block body %}
+=======
+{% block title %}{{ parent() }} - Détails de la vue cohorte pour le cours {% endblock %}
+
+{% block body %}
+    {% include 'StatEnseignantBundle:Cours:template/menu.html.twig' with {'enseignant': autres['teacher']|length, 'student':autres['student']|length, responsable: responsable, labelisation: labelisation  } only %}
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
     <table id="tabDetailCours" class="table tableCours">
         <tr>

@@ -65,7 +65,11 @@ You can now use this handler in your logger:
 ```php
 <?php
 
+<<<<<<< HEAD
 $logger->pushHandler(new PDOHandler(new PDO('sqlite:logs.sqlite'));
+=======
+$logger->pushHandler(new PDOHandler(new PDO('sqlite:logs.sqlite')));
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
 // You can now use your logger
 $logger->addInfo('My logger is now ready');

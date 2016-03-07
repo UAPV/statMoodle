@@ -26,7 +26,11 @@ class MongoDBHandlerTest extends TestCase
 
     public function testHandle()
     {
+<<<<<<< HEAD
         $mongo = $this->getMock('Mongo', array('selectCollection'));
+=======
+        $mongo = $this->getMock('Mongo', array('selectCollection'), array(), '', false);
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         $collection = $this->getMock('stdClass', array('save'));
 
         $mongo->expects($this->once())

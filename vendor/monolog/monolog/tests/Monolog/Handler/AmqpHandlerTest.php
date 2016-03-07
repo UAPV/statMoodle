@@ -32,7 +32,23 @@ class AmqpHandlerTest extends TestCase
 
     public function testHandle()
     {
+<<<<<<< HEAD
         $exchange = $this->getExchange();
+=======
+        $messages = array();
+
+        $exchange = $this->getMock('AMQPExchange', array('publish', 'setName'), array(), '', false);
+        $exchange->expects($this->once())
+            ->method('setName')
+            ->with('log')
+        ;
+        $exchange->expects($this->any())
+            ->method('publish')
+            ->will($this->returnCallback(function ($message, $routing_key, $flags = 0, $attributes = array()) use (&$messages) {
+                $messages[] = array($message, $routing_key, $flags, $attributes);
+            }))
+        ;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
         $handler = new AmqpHandler($exchange, 'log');
 
@@ -60,15 +76,21 @@ class AmqpHandlerTest extends TestCase
 
         $handler->handle($record);
 
+<<<<<<< HEAD
         $messages = $exchange->getMessages();
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         $this->assertCount(1, $messages);
         $messages[0][0] = json_decode($messages[0][0], true);
         unset($messages[0][0]['datetime']);
         $this->assertEquals($expected, $messages[0]);
     }
+<<<<<<< HEAD
 
     protected function getExchange()
     {
         return new AmqpExchangeMock();
     }
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 }

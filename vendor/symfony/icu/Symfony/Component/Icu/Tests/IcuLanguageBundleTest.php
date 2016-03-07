@@ -43,6 +43,7 @@ class IcuLanguageBundleTest extends IcuTestCase
         $this->bundle = new IcuLanguageBundle($this->reader);
     }
 
+<<<<<<< HEAD
     public function testGetLanguageName()
     {
         $languages = array(
@@ -89,6 +90,8 @@ class IcuLanguageBundleTest extends IcuTestCase
         $this->assertSame('English', $this->bundle->getLanguageName('en', 'US', 'en'));
     }
 
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     public function testGetLanguageNameForMultipleLanguages()
     {
         $this->reader->expects($this->never())
@@ -97,7 +100,11 @@ class IcuLanguageBundleTest extends IcuTestCase
         $this->assertNull($this->bundle->getLanguageName('mul', 'en'));
     }
 
+<<<<<<< HEAD
     public function testGetLanguageNames()
+=======
+    public function testGetLanguageNamesRemovesMultipleLanguages()
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     {
         $languages = array(
             'mul' => 'Multiple Languages',

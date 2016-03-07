@@ -14,7 +14,10 @@ namespace Monolog\Handler;
 use Aws\Common\Aws;
 use Aws\DynamoDb\DynamoDbClient;
 use Monolog\Formatter\ScalarFormatter;
+<<<<<<< HEAD
 use Monolog\Handler\AbstractProcessingHandler;
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 use Monolog\Logger;
 
 /**
@@ -39,9 +42,15 @@ class DynamoDbHandler extends AbstractProcessingHandler
 
     /**
      * @param DynamoDbClient $client
+<<<<<<< HEAD
      * @param string $table
      * @param integer $level
      * @param boolean $bubble
+=======
+     * @param string         $table
+     * @param integer        $level
+     * @param boolean        $bubble
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      */
     public function __construct(DynamoDbClient $client, $table, $level = Logger::DEBUG, $bubble = true)
     {
@@ -70,12 +79,20 @@ class DynamoDbHandler extends AbstractProcessingHandler
     }
 
     /**
+<<<<<<< HEAD
      * @param array $record
+=======
+     * @param  array $record
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      * @return array
      */
     protected function filterEmptyFields(array $record)
     {
+<<<<<<< HEAD
         return array_filter($record, function($value) {
+=======
+        return array_filter($record, function ($value) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             return !empty($value) || false === $value || 0 === $value;
         });
     }

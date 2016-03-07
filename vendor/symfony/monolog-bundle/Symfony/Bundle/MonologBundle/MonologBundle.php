@@ -11,6 +11,10 @@
 
 namespace Symfony\Bundle\MonologBundle;
 
+<<<<<<< HEAD
+=======
+use Symfony\Bundle\MonologBundle\DependencyInjection\Compiler\AddSwiftMailerTransportPass;
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Bundle\MonologBundle\DependencyInjection\Compiler\LoggerChannelPass;
@@ -31,5 +35,9 @@ class MonologBundle extends Bundle
         $container->addCompilerPass($channelPass = new LoggerChannelPass());
         $container->addCompilerPass(new DebugHandlerPass($channelPass));
         $container->addCompilerPass(new AddProcessorsPass());
+<<<<<<< HEAD
+=======
+        $container->addCompilerPass(new AddSwiftMailerTransportPass());
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     }
 }

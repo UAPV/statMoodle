@@ -11,7 +11,10 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
 use Monolog\Handler\ElasticSearchHandler;
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 use Monolog\Formatter\ElasticaFormatter;
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\TestCase;
@@ -185,7 +188,11 @@ class ElasticSearchHandlerTest extends TestCase
         $handler = new ElasticSearchHandler($client, $this->options);
         try {
             $handler->handleBatch(array($msg));
+<<<<<<< HEAD
         } catch(\RuntimeException $e) {
+=======
+        } catch (\RuntimeException $e) {
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
             $this->markTestSkipped("Cannot connect to Elastic Search server on localhost");
         }
 
@@ -208,7 +215,11 @@ class ElasticSearchHandlerTest extends TestCase
 
     /**
      * Return last created document id from ES response
+<<<<<<< HEAD
      * @param Response $response Elastica Response object
+=======
+     * @param  Response    $response Elastica Response object
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      * @return string|null
      */
     protected function getCreatedDocId(Response $response)
@@ -221,10 +232,17 @@ class ElasticSearchHandlerTest extends TestCase
 
     /**
      * Retrieve document by id from Elasticsearch
+<<<<<<< HEAD
      * @param Client $client Elastica client
      * @param string $index
      * @param string $type
      * @param string $documentId
+=======
+     * @param  Client $client     Elastica client
+     * @param  string $index
+     * @param  string $type
+     * @param  string $documentId
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
      * @return array
      */
     protected function getDocSourceFromElastic(Client $client, $index, $type, $documentId)
@@ -234,6 +252,10 @@ class ElasticSearchHandlerTest extends TestCase
         if (!empty($data['_source'])) {
             return $data['_source'];
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         return array();
     }
 }

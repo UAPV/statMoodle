@@ -40,6 +40,17 @@ class IcuCurrencyBundle extends CurrencyBundle
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
+=======
+    public function getLocales()
+    {
+        return $this->readEntry('misc', array('Locales'));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     public function getCurrencyNames($locale = null)
     {
         if (null === $locale) {
@@ -59,7 +70,11 @@ class IcuCurrencyBundle extends CurrencyBundle
      */
     public function getFractionDigits($currency)
     {
+<<<<<<< HEAD
         $entry = $this->readEntry('supplementaldata', array('CurrencyMeta'));
+=======
+        $entry = $this->readEntry('misc', array('CurrencyMeta'));
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
         if (!isset($entry[$currency][self::INDEX_FRACTION_DIGITS])) {
             // The 'DEFAULT' key contains the fraction digits and the rounding
@@ -77,7 +92,11 @@ class IcuCurrencyBundle extends CurrencyBundle
      */
     public function getRoundingIncrement($currency)
     {
+<<<<<<< HEAD
         $entry = $this->readEntry('supplementaldata', array('CurrencyMeta'));
+=======
+        $entry = $this->readEntry('misc', array('CurrencyMeta'));
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
 
         if (!isset($entry[$currency][self::INDEX_ROUNDING_INCREMENT])) {
             // The 'DEFAULT' key contains the fraction digits and the rounding

@@ -18,7 +18,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Stat\EnseignantBundle\StatEnseignantBundle(),
             new Dosi\AuthBundle\DosiAuthBundle(),
+<<<<<<< HEAD
 	    //new Dosi\AppigBundle\DosiAppigBundle(),
+=======
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -33,6 +36,11 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
+<<<<<<< HEAD
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+=======
+        //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+        $loader->load(__DIR__.'/config/config.yml');
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     }
 }

@@ -32,6 +32,17 @@ class IcuLocaleBundle extends LocaleBundle
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
+=======
+    public function getLocales()
+    {
+        return $this->readEntry('misc', array('Locales'));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> 9ba0bb3b0b37b6e5e4f7f164eb73874931d666b7
     public function getLocaleNames($locale = null)
     {
         if (null === $locale) {
